@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>[COMPANY NAME] — Construction &amp; Building Contractors in [LOCATION]</title>
+<meta name="description" content="[COMPANY NAME] is a [LOCATION]-based construction company delivering new builds, extensions and renovations across [AREAS COVERED]. Request a free, no-obligation quote.">
+<link rel="canonical" href="https://[DOMAIN].co.uk/">
+<meta name="theme-color" content="#071426">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="[COMPANY NAME]">
+<meta property="og:title" content="[COMPANY NAME] — Construction &amp; Building Contractors in [LOCATION]">
+<meta property="og:description" content="New builds, extensions and renovations delivered to a precise standard across [AREAS COVERED].">
+<meta property="og:url" content="https://[DOMAIN].co.uk/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://[DOMAIN].co.uk/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   1. TOKENS
+   ============================================================ */
+:root{
+  --navy-900:#071426;
+  --navy-800:#0B1F38;
+  --navy-700:#123052;
+  --gold:#C8A24C;
+
+  --paper:#EDEEEA;
+  --paper-2:#F7F7F5;
+  --ink:#0A1524;
+  --ink-2:#5C6874;
+  --line:rgba(10,21,36,.16);
+  --line-soft:rgba(10,21,36,.08);
+  --on-navy:#E9EBE7;
+  --on-navy-2:#93A2B4;
+  --navy-line:rgba(233,235,231,.18);
+
+  --f-display:"Archivo",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --f-text:"Newsreader",Georgia,"Times New Roman",serif;
+
+  --gut:clamp(20px,5vw,72px);
+  --max:1440px;
+  --sec:clamp(72px,11vw,160px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+:root:not([data-theme="light"]){ color-scheme:light dark; }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0A1422; --paper-2:#0E1C2E;
+    --ink:#E8EAE6; --ink-2:#98A6B6;
+    --line:rgba(233,235,231,.20); --line-soft:rgba(233,235,231,.10);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0A1422; --paper-2:#0E1C2E;
+  --ink:#E8EAE6; --ink-2:#98A6B6;
+  --line:rgba(233,235,231,.20); --line-soft:rgba(233,235,231,.10);
+}
+
+/* ============================================================
+   2. BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--f-display);font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,svg,video{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;font-weight:700;letter-spacing:-.025em;line-height:1.02}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+::selection{background:var(--gold);color:var(--navy-900)}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gut)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:fixed;top:-100px;left:16px;z-index:200;background:var(--gold);color:var(--navy-900);padding:12px 20px;font-weight:700;font-size:13px;letter-spacing:.06em;transition:top .2s}
+.skip:focus{top:16px}
+
+.d1{font-size:clamp(3.2rem,11vw,9rem);letter-spacing:-.05em;line-height:.9;font-weight:800}
+.d2{font-size:clamp(2.1rem,5.1vw,4.3rem);letter-spacing:-.038em;line-height:1;font-weight:700}
+.lede{font-family:var(--f-text);font-size:clamp(1.12rem,1.65vw,1.4rem);line-height:1.62;font-weight:300;color:var(--ink-2);max-width:56ch}
+.body{font-family:var(--f-text);font-size:1.0625rem;line-height:1.72;font-weight:300;color:var(--ink-2);max-width:62ch}
+
+.label{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.label::before{content:"";width:34px;height:1px;background:var(--gold)}
+
+/* ============================================================
+   3. BUTTONS
+   ============================================================ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 30px;
+  font-size:13.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;border:1px solid transparent;
+  transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease)}
+.btn-gold{background:var(--gold);color:var(--navy-900)}
+.btn-gold:hover{background:#DDB765}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.btn-ghost-light{border-color:rgba(255,255,255,.45);color:#fff}
+.btn-ghost-light:hover{border-color:#fff;background:#fff;color:var(--navy-900)}
+.btn .tick{width:7px;height:7px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(-45deg);transition:transform .3s var(--ease)}
+.btn:hover .tick{transform:rotate(-45deg) translate(2px,2px)}
+.link-u{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--gold);transition:gap .3s var(--ease)}
+.link-u:hover{gap:16px}
+
+/* ============================================================
+   4. NAV
+   ============================================================ */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s var(--ease),border-color .4s var(--ease)}
+.nav-in{display:flex;align-items:center;gap:32px;height:92px;transition:height .4s var(--ease)}
+.nav.is-stuck{background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.nav.is-stuck .nav-in{height:68px}
+.nav.on-dark:not(.is-stuck) .nav-link,.nav.on-dark:not(.is-stuck) .logo-name,.nav.on-dark:not(.is-stuck) .logo-sub{color:#fff}
+.nav.on-dark:not(.is-stuck) .logo-sub{color:rgba(255,255,255,.72)}
+.nav.on-dark:not(.is-stuck) .burger span{background:#fff}
+
+.logo{display:flex;align-items:center;gap:13px;margin-right:auto}
+.logo-mk{width:38px;height:38px;flex:none}
+.logo-name{font-size:16px;font-weight:800;letter-spacing:.04em;line-height:1.1;text-transform:uppercase}
+.logo-sub{font-size:9.5px;font-weight:600;letter-spacing:.24em;color:var(--ink-2);text-transform:uppercase}
+
+.nav-links{display:none;gap:30px;align-items:center}
+@media (min-width:1040px){.nav-links{display:flex}}
+.nav-link{font-size:13px;font-weight:600;letter-spacing:.05em;position:relative;padding:6px 0;color:var(--ink)}
+.nav-link::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+.nav-link:hover::after,.nav-link[aria-current="true"]::after{width:100%}
+.nav-cta{display:none}
+@media (min-width:1040px){.nav-cta{display:inline-flex;min-height:46px;padding:0 24px}}
+
+.burger{display:flex;flex-direction:column;justify-content:center;gap:6px;width:48px;height:48px;align-items:flex-end;margin-right:-8px}
+@media (min-width:1040px){.burger{display:none}}
+.burger span{display:block;height:1.5px;background:var(--ink);transition:transform .35s var(--ease),opacity .2s,width .35s var(--ease)}
+.burger span:nth-child(1){width:26px}
+.burger span:nth-child(2){width:18px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(3.75px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){width:26px;transform:translateY(-3.75px) rotate(-45deg)}
+
+.scrim{position:fixed;inset:0;z-index:98;background:rgba(7,20,38,.5);backdrop-filter:blur(3px);
+  opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:99;width:80%;max-width:520px;
+  background:var(--navy-900);color:var(--on-navy);border-left:1px solid var(--navy-line);
+  display:flex;flex-direction:column;padding:100px clamp(22px,4vw,40px) 30px;
+  transform:translateX(101%);transition:transform .5s var(--ease);visibility:hidden;
+  overflow-y:auto;box-shadow:-30px 0 60px rgba(0,0,0,.3)}
+@media (min-width:620px){.drawer{width:50%;min-width:340px}}
+.drawer.open{transform:none;visibility:visible}
+.drawer nav{display:flex;flex-direction:column;border-top:1px solid var(--navy-line)}
+.drawer nav a{padding:20px 0;border-bottom:1px solid var(--navy-line);font-size:clamp(1.55rem,7vw,2.1rem);font-weight:700;letter-spacing:-.03em}
+.drawer-foot{margin-top:auto;padding-top:28px;display:grid;gap:12px}
+.drawer-foot .btn{width:100%}
+.drawer-meta{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:12.5px;color:var(--on-navy-2);padding-top:18px}
+
+/* ============================================================
+   5. HERO (video)
+   ============================================================ */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;
+  background:var(--navy-900);overflow:hidden;color:#fff;text-align:center;padding:120px var(--gut) 90px}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover}
+.hero-media::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(7,20,38,.72) 0%,rgba(7,20,38,.52) 42%,rgba(7,20,38,.86) 100%)}
+.hero-in{position:relative;z-index:2;max-width:760px;width:100%}
+.hero h1{color:#fff;text-shadow:0 2px 40px rgba(0,0,0,.35);
+  font-size:clamp(2.6rem,7.4vw,5.6rem);letter-spacing:-.045em;line-height:.94}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l i{display:block;font-style:normal;transform:translateY(105%);transition:transform 1s var(--ease)}
+.hero.reveal h1 .l i{transform:translateY(0)}
+.hero h1 .l:nth-child(2) i{transition-delay:.09s}
+.hero-sub{margin:26px auto 0;font-family:var(--f-text);font-size:clamp(1.05rem,2vw,1.45rem);font-weight:300;
+  color:rgba(255,255,255,.86);max-width:36ch;opacity:0;transition:opacity .8s .3s var(--ease)}
+.hero.reveal .hero-sub{opacity:1}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:clamp(30px,4vw,42px);
+  opacity:0;transform:translateY(10px);transition:opacity .8s .45s var(--ease),transform .8s .45s var(--ease)}
+.hero.reveal .hero-actions{opacity:1;transform:none}
+.hero-rule{width:64px;height:2px;background:var(--gold);margin:0 auto clamp(26px,3.4vw,38px);
+  transform:scaleX(0);transition:transform .7s var(--ease)}
+.hero.reveal .hero-rule{transform:scaleX(1)}
+@media (max-width:700px){.hero{min-height:90svh}}
+
+/* ============================================================
+   6. SECTION SHELL
+   ============================================================ */
+.sec{padding-block:var(--sec);position:relative}
+.sec-dark{background:var(--navy-900);color:var(--on-navy)}
+.sec-dark .label{color:var(--on-navy-2)}
+.sec-dark .lede,.sec-dark .body{color:var(--on-navy-2)}
+.sec-alt{background:var(--paper-2)}
+.sec-head{display:grid;gap:clamp(18px,2.6vw,28px);margin-bottom:clamp(40px,5.6vw,72px)}
+@media (min-width:900px){.sec-head{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:end;gap:clamp(32px,5vw,72px)}}
+.sec-head .label{grid-column:1/-1}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .hero h1 .l i{transform:none}
+  .hero-sub,.hero-actions{opacity:1;transform:none}
+  .hero-rule{transform:scaleX(1)}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* ============================================================
+   7. ABOUT
+   ============================================================ */
+.about-grid{display:grid;gap:clamp(34px,5vw,64px)}
+@media (min-width:960px){.about-grid{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);align-items:center;gap:clamp(48px,6vw,90px)}}
+.about-fig{position:relative;max-width:460px}
+@media (max-width:959px){.about-fig{max-width:100%}}
+.about-fig img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.about-fig::after{content:"";position:absolute;left:-14px;top:-14px;width:46%;height:46%;border:1px solid var(--gold);pointer-events:none}
+.about-cta{margin-top:clamp(28px,3.4vw,38px)}
+.about-pull{font-family:var(--f-text);font-size:clamp(1.3rem,2.4vw,1.85rem);line-height:1.42;font-weight:300;
+  color:var(--ink);border-left:2px solid var(--gold);padding-left:22px;margin:clamp(26px,3vw,34px) 0}
+
+/* ============================================================
+   8. SERVICES
+   ============================================================ */
+/* Services read as a quiet, text-led index. The photography weight is
+   deliberately saved for the projects section below. */
+.svc{display:grid;border-top:1px solid var(--line)}
+@media (min-width:700px){.svc{grid-template-columns:repeat(2,1fr);column-gap:clamp(28px,4vw,64px)}}
+@media (min-width:1150px){.svc{grid-template-columns:repeat(3,1fr)}}
+.svc-item{display:grid;grid-template-columns:76px 1fr;gap:0 20px;align-items:start;
+  padding:clamp(20px,2.4vw,26px) 0;border-bottom:1px solid var(--line);position:relative}
+.svc-item::after{content:"";position:absolute;left:0;bottom:-1px;width:0;height:1px;background:var(--gold);transition:width .45s var(--ease)}
+.svc-item:hover::after{width:100%}
+.svc-thumb{grid-row:1/4;width:76px;height:76px;overflow:hidden;background:var(--navy-800)}
+.svc-thumb img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);
+  transition:filter .5s var(--ease),transform .7s var(--ease)}
+.svc-item:hover .svc-thumb img{filter:none;transform:scale(1.07)}
+.svc-title{font-size:1.16rem;font-weight:700;letter-spacing:-.022em;transition:color .3s}
+.svc-item:hover .svc-title{color:var(--gold)}
+.svc-desc{font-family:var(--f-text);font-weight:300;font-size:.99rem;line-height:1.58;color:var(--ink-2);margin-top:7px;max-width:36ch}
+.svc-more{margin-top:12px;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:8px;color:var(--ink-2);transition:color .3s}
+.svc-item:hover .svc-more{color:var(--ink)}
+.svc-item:hover .svc-more .tick{transform:rotate(-45deg) translate(2px,2px)}
+@media (max-width:480px){
+  .svc-item{grid-template-columns:60px 1fr;gap:0 16px}
+  .svc-thumb{width:60px;height:60px}
+}
+
+/* ============================================================
+   9. WORK
+   ============================================================ */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:clamp(28px,3.4vw,42px)}
+.filter{font-size:11.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;padding:9px 16px;
+  border:1px solid var(--navy-line);color:var(--on-navy-2);transition:.25s var(--ease);min-height:40px}
+.filter:hover{color:var(--on-navy);border-color:var(--on-navy-2)}
+.filter[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--navy-900)}
+
+.work{display:grid;gap:clamp(20px,2.4vw,30px)}
+@media (min-width:720px){.work{grid-template-columns:repeat(6,1fr)}}
+.proj{grid-column:span 6;text-align:left;width:100%;display:block}
+@media (min-width:720px){
+  .proj{grid-column:span 3}
+  .proj.w-lg{grid-column:span 4}
+  .proj.w-sm{grid-column:span 2}
+  .proj.push{margin-top:clamp(30px,5vw,72px)}
+}
+.proj-media{position:relative;overflow:hidden;background:var(--navy-800)}
+.proj-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3;transition:transform 1s var(--ease),filter .6s var(--ease)}
+.proj.w-sm .proj-media img{aspect-ratio:3/4}
+.proj.w-lg .proj-media img{aspect-ratio:16/10}
+.proj-media::after{content:"";position:absolute;inset:0;z-index:1;opacity:0;transition:opacity .5s var(--ease);
+  background:linear-gradient(180deg,rgba(7,20,38,0) 35%,rgba(7,20,38,.88) 100%)}
+.proj:hover .proj-media img,.proj:focus-visible .proj-media img{transform:scale(1.06)}
+.proj:hover .proj-media::after,.proj:focus-visible .proj-media::after{opacity:1}
+.proj-no{position:absolute;left:16px;top:14px;z-index:3;font-size:12px;font-weight:800;letter-spacing:.1em;color:#fff;
+  font-variant-numeric:tabular-nums;padding-bottom:6px}
+.proj-no::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:width .5s var(--ease)}
+.proj:hover .proj-no::after,.proj:focus-visible .proj-no::after{width:100%}
+/* title rides up over the image on hover — the projects are the showpiece */
+.proj-over{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:20px;opacity:0;transform:translateY(12px);
+  transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.proj:hover .proj-over,.proj:focus-visible .proj-over{opacity:1;transform:none}
+.proj-over > span:first-child{display:block;font-family:var(--f-text);font-weight:300;font-size:.97rem;
+  line-height:1.5;color:rgba(255,255,255,.88);max-width:40ch}
+.proj-open{display:inline-flex;align-items:center;gap:9px;margin-top:14px;font-size:10.5px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+.proj-meta{padding-top:18px;border-top:1px solid var(--navy-line);margin-top:18px;
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.proj-title{font-size:clamp(1.15rem,1.7vw,1.5rem);font-weight:700;letter-spacing:-.028em;color:#fff;transition:color .3s}
+.proj.w-lg .proj-title{font-size:clamp(1.35rem,2.2vw,1.95rem)}
+.proj:hover .proj-title{color:var(--gold)}
+.proj-sub{font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--on-navy-2)}
+@media (max-width:719px){
+  .proj-over{opacity:1;transform:none;background:linear-gradient(180deg,rgba(7,20,38,0),rgba(7,20,38,.86))}
+  .proj-media::after{opacity:1}
+}
+.work-empty{grid-column:1/-1;padding:56px 0;border-top:1px solid var(--navy-line);color:var(--on-navy-2);font-family:var(--f-text);font-weight:300}
+.work-foot{margin-top:clamp(36px,4.6vw,56px);display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;
+  padding-top:26px;border-top:1px solid var(--navy-line)}
+.work-count{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--on-navy-2);font-variant-numeric:tabular-nums}
+
+/* ============================================================
+   10. MODAL
+   ============================================================ */
+.modal{position:fixed;inset:0;z-index:180;display:none;background:var(--navy-900);color:var(--on-navy);overflow-y:auto;overscroll-behavior:contain}
+.modal.open{display:block}
+.modal-in{opacity:0;transform:translateY(14px);transition:opacity .4s var(--ease),transform .4s var(--ease)}
+.modal.shown .modal-in{opacity:1;transform:none}
+.modal-bar{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:18px;padding:14px var(--gut);
+  background:var(--navy-900);border-bottom:1px solid var(--navy-line)}
+.modal-ref{font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--gold);font-variant-numeric:tabular-nums;margin-right:auto}
+.modal-close{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;min-height:44px;padding:0 4px}
+.modal-close:hover{color:var(--gold)}
+.modal-close .x{position:relative;width:14px;height:14px}
+.modal-close .x::before,.modal-close .x::after{content:"";position:absolute;top:6px;left:0;width:14px;height:1.5px;background:currentColor}
+.modal-close .x::before{transform:rotate(45deg)}.modal-close .x::after{transform:rotate(-45deg)}
+
+.car{position:relative;background:var(--navy-800);touch-action:pan-y;overflow:hidden;
+  max-width:1180px;margin:clamp(16px,2.6vw,34px) auto 0}
+@media (max-width:1240px){.car{margin-inline:var(--gut)}}
+@media (max-width:620px){.car{margin-inline:0}}
+.car-track{display:flex;transition:transform .5s var(--ease)}
+.car-slide{flex:0 0 100%}
+.car-slide img{width:100%;height:clamp(240px,58vh,600px);object-fit:cover}
+.car-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;display:flex;align-items:center;justify-content:center;
+  background:rgba(7,20,38,.6);color:#fff;border:1px solid rgba(255,255,255,.28);transition:.25s var(--ease)}
+.car-nav:hover{background:var(--gold);color:var(--navy-900);border-color:var(--gold)}
+.car-nav.prev{left:14px}.car-nav.next{right:14px}
+.car-nav .a{width:11px;height:11px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor}
+.car-nav.prev .a{transform:rotate(-135deg) translate(-2px,-2px)}
+.car-nav.next .a{transform:rotate(45deg) translate(-2px,2px)}
+.car-count{position:absolute;left:14px;bottom:14px;background:rgba(7,20,38,.82);color:#fff;font-size:11.5px;font-weight:700;
+  letter-spacing:.13em;padding:8px 13px;font-variant-numeric:tabular-nums;border:1px solid rgba(255,255,255,.2)}
+.car-dots{display:flex;gap:7px;padding:14px 0 0;max-width:1180px;margin:0 auto}
+@media (max-width:1240px){.car-dots{padding-inline:var(--gut)}}
+.car-dots button{width:26px;height:24px;display:flex;align-items:center}
+.car-dots i{display:block;width:100%;height:2px;background:var(--navy-line);transition:background .25s}
+.car-dots button[aria-current="true"] i{background:var(--gold)}
+
+.modal-body{display:grid;gap:clamp(28px,4vw,56px);padding:clamp(30px,4.4vw,54px) var(--gut) clamp(54px,7vw,90px)}
+@media (min-width:920px){.modal-body{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(40px,5.5vw,84px)}}
+.modal-body h2{font-size:clamp(1.9rem,4vw,3.2rem);color:#fff}
+.modal-facts{border-top:1px solid var(--navy-line);margin-top:26px}
+.modal-facts div{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--navy-line);font-size:13.5px}
+.modal-facts dt{color:var(--on-navy-2);letter-spacing:.09em;text-transform:uppercase;font-size:11px;font-weight:600}
+.modal-facts dd{margin:0;font-weight:600;text-align:right}
+.modal-scope{margin-top:26px}
+.modal-scope h3{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.modal-scope li{padding:11px 0;border-bottom:1px solid var(--navy-line);font-size:14.5px;display:flex;gap:12px;align-items:baseline}
+.modal-scope li::before{content:"";flex:none;width:5px;height:5px;background:var(--gold)}
+
+/* ============================================================
+   10b. WIDE VIDEO BAND
+   ============================================================ */
+.band{position:relative;background:var(--navy-900);color:#fff;overflow:hidden;
+  min-height:clamp(340px,58vw,620px);display:flex;align-items:flex-end}
+.band video,.band > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.band::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(7,20,38,.55) 0%,rgba(7,20,38,.25) 45%,rgba(7,20,38,.9) 100%)}
+.band-in{position:relative;z-index:2;width:100%;padding-block:clamp(36px,5vw,64px)}
+.band h2{font-size:clamp(1.8rem,4.4vw,3.4rem);letter-spacing:-.04em;max-width:16ch}
+.band p{font-family:var(--f-text);font-weight:300;font-size:clamp(1rem,1.5vw,1.22rem);line-height:1.6;
+  color:rgba(255,255,255,.84);max-width:46ch;margin-top:16px}
+.band-play{position:absolute;right:var(--gut);top:clamp(24px,4vw,40px);z-index:3;display:inline-flex;align-items:center;gap:10px;
+  min-height:42px;padding:0 16px;border:1px solid rgba(255,255,255,.4);color:#fff;
+  font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.band-play:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ============================================================
+   11. WHY US
+   ============================================================ */
+.why{display:grid;gap:0;border-top:1px solid var(--line)}
+@media (min-width:880px){.why{grid-template-columns:repeat(2,1fr);column-gap:clamp(40px,6vw,90px)}}
+.why-item{padding:clamp(24px,3vw,34px) 0;border-bottom:1px solid var(--line)}
+.why-item h3{font-size:1.18rem;display:flex;align-items:center;gap:14px}
+.why-item h3::before{content:"";flex:none;width:18px;height:1px;background:var(--gold)}
+.why-item p{font-family:var(--f-text);font-weight:300;color:var(--ink-2);line-height:1.66;margin-top:10px;max-width:48ch;padding-left:32px}
+
+/* ============================================================
+   12. STATS — the only numbers on the page
+   ============================================================ */
+.stats{background:var(--navy-900);color:var(--on-navy);position:relative;overflow:hidden}
+.stats img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16;filter:grayscale(1)}
+.stats-in{position:relative;padding-block:clamp(60px,8vw,110px)}
+.stats-grid{display:grid;gap:1px;background:var(--navy-line);border:1px solid var(--navy-line);margin-top:clamp(34px,4vw,50px)}
+@media (min-width:760px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--navy-900);padding:clamp(28px,3.4vw,44px) clamp(20px,2.4vw,32px)}
+.stat b{display:block;font-size:clamp(2.6rem,6.2vw,4.6rem);font-weight:800;letter-spacing:-.05em;color:#fff;line-height:.95;font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--on-navy-2);margin-top:14px}
+
+/* ============================================================
+   13. TESTIMONIALS
+   ============================================================ */
+.tst-view{overflow:hidden}
+.tst-track{display:flex;transition:transform .55s var(--ease)}
+.tst-card{flex:0 0 100%;padding-right:2px}
+.tst-q{font-family:var(--f-text);font-size:clamp(1.35rem,3.1vw,2.3rem);line-height:1.38;font-weight:300;letter-spacing:-.015em;color:var(--ink);max-width:26ch}
+.tst-by{margin-top:clamp(26px,3vw,36px);padding-top:18px;border-top:1px solid var(--line);display:grid;gap:5px}
+.tst-by b{font-size:14.5px;font-weight:700}
+.tst-by span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.tst-ctrl{display:flex;align-items:center;gap:10px;margin-top:clamp(28px,3.4vw,40px)}
+.tst-btn{width:50px;height:50px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:.25s var(--ease)}
+.tst-btn:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tst-btn .a{width:10px;height:10px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor}
+.tst-btn.prev .a{transform:rotate(-135deg) translate(-2px,-2px)}
+.tst-btn.next .a{transform:rotate(45deg) translate(-2px,2px)}
+.tst-pos{margin-left:10px;font-size:12px;letter-spacing:.12em;color:var(--ink-2);font-variant-numeric:tabular-nums}
+
+/* ============================================================
+   14. AREAS
+   ============================================================ */
+.areas{display:grid;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
+@media (min-width:600px){.areas{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:980px){.areas{grid-template-columns:repeat(4,1fr)}}
+.area{background:var(--paper);padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;justify-content:flex-end;gap:7px;min-height:130px;transition:background .3s var(--ease)}
+.sec-alt .area{background:var(--paper-2)}
+.area:hover{background:var(--navy-900);color:#fff}
+.area:hover .area-sub{color:var(--on-navy-2)}
+.area b{font-size:1.06rem;font-weight:700;letter-spacing:-.015em}
+.area-sub{font-size:12.5px;color:var(--ink-2);font-family:var(--f-text);font-weight:300;line-height:1.5}
+.area-more{margin-top:22px;font-size:13px;color:var(--ink-2);font-family:var(--f-text);font-weight:300}
+.area-more a{border-bottom:1px solid var(--gold)}
+
+/* ============================================================
+   15. FAQ
+   ============================================================ */
+.faq{border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;display:flex;align-items:flex-start;gap:20px;padding:clamp(20px,2.6vw,28px) 0;text-align:left;
+  font-size:clamp(1.02rem,1.55vw,1.28rem);font-weight:700;letter-spacing:-.02em;transition:color .25s}
+.faq-q:hover{color:var(--gold)}
+.faq-sign{flex:none;position:relative;width:15px;height:15px;margin-top:6px}
+.faq-sign::before,.faq-sign::after{content:"";position:absolute;background:var(--gold);transition:transform .32s var(--ease),opacity .25s}
+.faq-sign::before{top:7px;left:0;width:15px;height:1.5px}
+.faq-sign::after{left:7px;top:0;width:1.5px;height:15px}
+.faq-q[aria-expanded="true"] .faq-sign::after{transform:rotate(90deg);opacity:0}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s var(--ease)}
+.faq-a > div{overflow:hidden}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a p{font-family:var(--f-text);font-weight:300;color:var(--ink-2);line-height:1.72;max-width:66ch;padding-bottom:clamp(22px,2.6vw,30px)}
+
+/* ============================================================
+   16. QUOTE FORM
+   ============================================================ */
+.quote{background:var(--navy-900);color:var(--on-navy)}
+.quote-grid{display:grid;gap:clamp(36px,5vw,64px)}
+@media (min-width:1000px){.quote-grid{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(44px,6vw,96px)}}
+.quote h2{color:#fff}
+.quote-alt{margin-top:clamp(30px,3.6vw,42px);display:grid;gap:12px;max-width:340px}
+.quote-alt a{display:flex;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--navy-line);transition:.28s var(--ease)}
+.quote-alt a:hover{border-color:var(--gold);background:rgba(200,162,76,.07)}
+.quote-alt .ic{flex:none;width:20px;height:20px;color:var(--gold)}
+.quote-alt b{display:block;font-size:10.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--on-navy-2)}
+.quote-alt span{font-size:15px;font-weight:600}
+
+form{display:grid;gap:18px}
+@media (min-width:680px){form{grid-template-columns:repeat(2,1fr);gap:20px}.f-full{grid-column:1/-1}}
+.field{display:grid;gap:8px}
+.field label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--on-navy-2)}
+.field label .req{color:var(--gold)}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid var(--navy-line);
+  color:var(--on-navy);font-family:var(--f-display);font-size:15.5px;padding:12px 2px;min-height:48px;transition:border-color .25s;border-radius:0}
+.field textarea{min-height:120px;resize:vertical;line-height:1.6}
+.field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);
+  background-position:calc(100% - 13px) 21px,calc(100% - 8px) 21px;background-size:5px 5px;background-repeat:no-repeat;padding-right:30px}
+.field select option{background:var(--navy-800);color:var(--on-navy)}
+.field input::placeholder,.field textarea::placeholder{color:rgba(147,162,180,.65)}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--gold);outline:none}
+.field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.field.err input,.field.err select,.field.err textarea{border-bottom-color:#E4674F}
+.err-msg{font-size:12px;color:#F0937E;display:none}
+.field.err .err-msg{display:block}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-top:8px}
+.form-note{font-size:12px;color:var(--on-navy-2);max-width:38ch;line-height:1.5}
+.form-alert{grid-column:1/-1;border:1px solid #E4674F;padding:14px 16px;font-size:13.5px;color:#F0937E;display:none}
+.form-alert.show{display:block}
+.form-done{display:none;border:1px solid var(--gold);padding:clamp(28px,4vw,44px)}
+.form-done.show{display:block}
+.form-done .seal{width:44px;height:44px;color:var(--gold);margin-bottom:20px}
+.form-done h3{font-size:clamp(1.5rem,3vw,2.1rem);color:#fff;margin-bottom:14px}
+.form-done p{font-family:var(--f-text);font-weight:300;color:var(--on-navy-2);line-height:1.68;max-width:52ch}
+
+/* ============================================================
+   17. CONTACT
+   ============================================================ */
+.contact-grid{display:grid;gap:clamp(30px,4vw,54px)}
+@media (min-width:920px){.contact-grid{grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(40px,5vw,80px);align-items:start}}
+.cdl{border-top:1px solid var(--line)}
+.cdl div{padding:20px 0;border-bottom:1px solid var(--line);display:grid;gap:6px}
+@media (min-width:520px){.cdl div{grid-template-columns:140px 1fr;align-items:baseline;gap:20px}}
+.cdl dt{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2)}
+.cdl dd{margin:0;font-size:1.05rem;font-weight:600;letter-spacing:-.01em}
+.cdl dd small{display:block;font-size:13px;font-weight:400;color:var(--ink-2);margin-top:4px;letter-spacing:0}
+.map{border:1px solid var(--line);background:var(--paper-2);aspect-ratio:16/10;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px;position:relative;overflow:hidden}
+.map-grid{position:absolute;inset:0;background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);background-size:46px 46px}
+.map-pin{width:30px;height:30px;color:var(--gold);position:relative}
+.map b{font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;position:relative}
+.map span{font-size:12.5px;color:var(--ink-2);max-width:34ch;position:relative;line-height:1.5}
+
+/* ============================================================
+   18. FINAL CTA + FOOTER
+   ============================================================ */
+.final{background:var(--gold);color:var(--navy-900);padding-block:clamp(56px,8vw,104px)}
+.final-in{display:grid;gap:clamp(26px,3.4vw,44px)}
+@media (min-width:880px){.final-in{grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:clamp(40px,6vw,80px)}}
+.final h2{font-size:clamp(2.2rem,6vw,4.6rem);letter-spacing:-.045em;line-height:.98}
+.final p{font-family:var(--f-text);font-size:clamp(1.05rem,1.6vw,1.3rem);font-weight:300;margin-top:18px;max-width:44ch;line-height:1.55}
+.final-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-onGold{background:var(--navy-900);color:#fff}
+.btn-onGold:hover{background:#0F2946}
+.btn-onGold-ghost{border-color:rgba(7,20,38,.42);color:var(--navy-900)}
+.btn-onGold-ghost:hover{background:var(--navy-900);color:#fff;border-color:var(--navy-900)}
+
+footer{background:var(--navy-900);color:var(--on-navy);padding-block:clamp(54px,7vw,90px) 30px}
+.foot-top{display:grid;gap:clamp(34px,4vw,50px);padding-bottom:clamp(40px,5vw,60px);border-bottom:1px solid var(--navy-line)}
+@media (min-width:860px){.foot-top{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:clamp(30px,4vw,56px)}}
+.foot-brand .logo-name{color:var(--on-navy)}
+.foot-brand p{font-family:var(--f-text);font-weight:300;color:var(--on-navy-2);line-height:1.68;margin-top:18px;max-width:38ch;font-size:1rem}
+.foot-soc{display:flex;gap:9px;margin-top:22px}
+.foot-soc a{width:40px;height:40px;border:1px solid var(--navy-line);display:flex;align-items:center;justify-content:center;color:var(--on-navy-2);transition:.25s}
+.foot-soc a:hover{border-color:var(--gold);color:var(--gold)}
+.foot-col h3{font-size:11px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.foot-col li{margin-bottom:11px}
+.foot-col a,.foot-col span{font-size:14px;color:var(--on-navy-2);transition:color .2s}
+.foot-col a:hover{color:var(--on-navy)}
+.foot-bot{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;justify-content:space-between;padding-top:26px}
+.foot-bot p,.foot-bot a{font-size:12.5px;color:var(--on-navy-2)}
+.foot-bot a:hover{color:var(--on-navy)}
+.foot-legal{display:flex;flex-wrap:wrap;gap:8px 22px}
+
+.no-scroll{overflow:hidden}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav on-dark" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="[COMPANY NAME] — home">
+      <svg class="logo-mk" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="1" y="1" width="38" height="38" fill="none" stroke="#C8A24C" stroke-width="1.5"/>
+        <path d="M8 31V15l12-7 12 7v16" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M20 31V21M8 24h24" stroke="#C8A24C" stroke-width="1.5"/>
+      </svg>
+      <span>
+        <span class="logo-name">[Company Name]</span>
+        <span class="logo-sub">Construction</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#work">Our Work</a>
+      <a class="nav-link" href="#why">Why Us</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+
+    <a class="btn btn-gold nav-cta" href="#quote">Get a quote</a>
+
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="scrim" id="scrim" hidden></div>
+<div class="drawer" id="drawer">
+  <nav aria-label="Mobile">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="drawer-foot">
+    <a class="btn btn-gold" href="#quote">Get a quote</a>
+    <a class="btn btn-ghost-light" href="tel:[PHONE]">Call [PHONE]</a>
+    <div class="drawer-meta"><span>[EMAIL]</span><span>[LOCATION], UK</span></div>
+  </div>
+</div>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ============================ HERO ============================
+     VIDEO: drop your trimmed clip at assets/hero.mp4 (and .webm if
+     you have it). Until then the poster image below shows instead.
+     Trim command (keeps 6s starting at 00:00:12, no audio):
+       ffmpeg -ss 00:00:12 -i original.mp4 -t 6 -an \
+         -vf "scale=1920:-2,fps=30" -c:v libx264 -crf 24 \
+         -movflags +faststart assets/hero.mp4
+     The headline appears at HERO_TEXT_AT seconds (set in the script
+     at the bottom) — set it to the moment the wall gives way.
+     ============================================================ -->
+<section class="hero" id="hero">
+  <div class="hero-media">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-in">
+    <div class="hero-rule"></div>
+    <h1>
+      <span class="l"><i>Built to last.</i></span>
+    </h1>
+    <p class="hero-sub">Construction in [LOCATION].</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#quote">Get a quote <i class="tick" aria-hidden="true"></i></a>
+      <a class="btn btn-ghost-light" href="#work">View our work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ABOUT ============================ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="label">About [COMPANY NAME]</p>
+      <h2 class="d2">A builder that works<br>like an architect thinks.</h2>
+      <p class="lede">A [LOCATION]-based construction company working across residential and commercial projects — small enough that you know who is on site, established enough to run a build properly.</p>
+    </div>
+
+    <div class="about-grid">
+      <figure class="about-fig rv">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=70"
+             alt="Two [COMPANY NAME] tradesmen working together on a building site" width="1000" height="1250" loading="lazy" decoding="async">
+      </figure>
+
+      <div class="rv">
+        <p class="body">Every project gets the same three things: a single point of contact, a programme that is written down, and a finish that survives inspection up close. We would rather turn work away than run a site we cannot staff properly.</p>
+        <p class="about-pull">The details are where a build is judged — and where most of them fail.</p>
+        <p class="body">Directly employed trades and long-standing subcontractors mean the same faces from first fix through to snagging. Costs and programme changes are put in writing when they happen, not at invoice stage.</p>
+        <div class="about-cta"><a class="link-u" href="#why">Learn more about us <i class="tick" aria-hidden="true"></i></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SERVICES ============================
+     Each <article> is ready to become /services/[slug]/ later.
+     Remove any service the company does not offer.
+     ================================================================ -->
+<section class="sec sec-alt" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="label">What we build</p>
+      <h2 class="d2">Services</h2>
+      <p class="lede">Residential and commercial work, delivered by one team from first survey to final handover.</p>
+    </div>
+
+    <div class="svc">
+      <article class="svc-item" id="svc-extensions">
+        <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1621511075938-f03482369feb?auto=format&fit=crop&w=200&q=60" alt="Brick extension under construction" loading="lazy" decoding="async"></span>
+        <h3 class="svc-title">Extensions</h3>
+        <p class="svc-desc">Single and double-storey extensions, side returns and wrap-arounds, built to read as part of the original house.</p>
+        <a class="svc-more" href="/services/extensions/">Service details <i class="tick" aria-hidden="true"></i></a>
+      </article>
+
+      <article class="svc-item" id="svc-new-builds">
+        <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=200&q=60" alt="New build structure under construction" loading="lazy" decoding="async"></span>
+        <h3 class="svc-title">New builds</h3>
+        <p class="svc-desc">Ground-up residential builds, managed to a fixed programme from groundworks to handover.</p>
+        <a class="svc-more" href="/services/new-builds/">Service details <i class="tick" aria-hidden="true"></i></a>
+      </article>
+
+      <article class="svc-item" id="svc-renovations">
+        <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=200&q=60" alt="Builders working on a property renovation" loading="lazy" decoding="async"></span>
+        <h3 class="svc-title">Renovations</h3>
+        <p class="svc-desc">Whole-house renovation including structural alterations, services and finishes.</p>
+        <a class="svc-more" href="/services/renovations/">Service details <i class="tick" aria-hidden="true"></i></a>
+      </article>
+
+      <article class="svc-item" id="svc-loft-conversions">
+        <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&w=200&q=60" alt="Carpenter working on a roof structure" loading="lazy" decoding="async"></span>
+        <h3 class="svc-title">Loft conversions</h3>
+        <p class="svc-desc">Dormer, hip-to-gable and rooflight conversions with compliant stairs and insulation.</p>
+        <a class="svc-more" href="/services/loft-conversions/">Service details <i class="tick" aria-hidden="true"></i></a>
+      </article>
+
+      <article class="svc-item" id="svc-refurbishments">
+        <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=200&q=60" alt="Construction team on a refurbishment project" loading="lazy" decoding="async"></span>
+        <h3 class="svc-title">Refurbishments &amp; fit-outs</h3>
+        <p class="svc-desc">Interior refurbishment for occupied homes and commercial units, phased around how the space is used.</p>
+        <a class="svc-more" href="/services/refurbishments/">Service details <i class="tick" aria-hidden="true"></i></a>
+      </article>
+
+      <article class="svc-item" id="svc-commercial">
+        <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=200&q=60" alt="Commercial buildings under construction" loading="lazy" decoding="async"></span>
+        <h3 class="svc-title">Commercial construction</h3>
+        <p class="svc-desc">Offices, retail and light industrial units delivered around tenant and trading constraints.</p>
+        <a class="svc-more" href="/services/commercial/">Service details <i class="tick" aria-hidden="true"></i></a>
+      </article>
+
+      <article class="svc-item" id="svc-groundworks">
+        <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1527335988388-b40ee248d80c?auto=format&fit=crop&w=200&q=60" alt="Structural frame and groundworks on site" loading="lazy" decoding="async"></span>
+        <h3 class="svc-title">Groundworks</h3>
+        <p class="svc-desc">Foundations, drainage, retaining structures and external hard landscaping.</p>
+        <a class="svc-more" href="/services/groundworks/">Service details <i class="tick" aria-hidden="true"></i></a>
+      </article>
+
+      <article class="svc-item" id="svc-roofing">
+        <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?auto=format&fit=crop&w=200&q=60" alt="Crane and roof works on a building" loading="lazy" decoding="async"></span>
+        <h3 class="svc-title">Roofing</h3>
+        <p class="svc-desc">Pitched and flat roofing, re-roofs, leadwork and rainwater goods.</p>
+        <a class="svc-more" href="/services/roofing/">Service details <i class="tick" aria-hidden="true"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WORK ============================ -->
+<section class="sec sec-dark" id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="label">Selected projects</p>
+      <h2 class="d2" style="color:#fff">Our work</h2>
+      <p class="lede">A cross-section of recent residential and commercial projects. Select any project to see the full scope.</p>
+    </div>
+
+    <div class="filters rv" role="group" aria-label="Filter projects by category">
+      <button class="filter" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter" data-filter="Residential" aria-pressed="false">Residential</button>
+      <button class="filter" data-filter="Commercial" aria-pressed="false">Commercial</button>
+      <button class="filter" data-filter="Renovation" aria-pressed="false">Renovation</button>
+      <button class="filter" data-filter="Extension" aria-pressed="false">Extension</button>
+      <button class="filter" data-filter="New Build" aria-pressed="false">New Build</button>
+    </div>
+
+    <div class="work" id="workGrid" aria-live="polite"></div>
+
+    <div class="work-foot">
+      <p class="work-count" id="workCount"></p>
+      <a class="btn btn-gold" href="#quote">Discuss your project <i class="tick" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WIDE VIDEO BAND ============================
+     Swap assets/showreel.mp4 for a longer site reel when you have one.
+     It only starts playing once it scrolls into view.
+     ===================================================================== -->
+<section class="band" id="reel" aria-label="On site with [COMPANY NAME]">
+  <video id="reelVideo" muted loop playsinline preload="none" poster="assets/showreel-poster.jpg">
+    <source src="assets/showreel.mp4" type="video/mp4">
+  </video>
+  <button class="band-play" id="reelBtn" aria-pressed="false">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l16 9-16 9z"/></svg>
+    <span id="reelLabel">Play</span>
+  </button>
+  <div class="wrap band-in">
+    <h2>Every wall comes down for a reason.</h2>
+    <p>Structural alterations, done properly: surveyed, propped, and put back stronger than it was.</p>
+  </div>
+</section>
+
+<!-- ============================ WHY US ============================ -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="label">Why choose us</p>
+      <h2 class="d2">Six things you can<br>hold us to.</h2>
+      <p class="lede">The working practices that decide whether a build finishes on time and still looks right five years later.</p>
+    </div>
+
+    <div class="why rv">
+      <div class="why-item"><h3>Quality craftsmanship</h3><p>Trades who do one thing properly. Work is inspected at each stage, not only at the end.</p></div>
+      <div class="why-item"><h3>Reliable project management</h3><p>One contract manager owns your build. Materials and trades are booked before they are needed.</p></div>
+      <div class="why-item"><h3>Transparent communication</h3><p>Costs, variations and delays are put in writing when they happen, not at invoice stage.</p></div>
+      <div class="why-item"><h3>Attention to detail</h3><p>Junctions, tolerances and reveals set out from drawings, then checked before they are closed up.</p></div>
+      <div class="why-item"><h3>Experienced team</h3><p>A core team that has worked together for years, supported by long-standing specialist subcontractors.</p></div>
+      <div class="why-item"><h3>Professional standards</h3><p>Documented site practice, full insurance and building control sign-off on every project.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ NUMBERS ============================
+     CONFIRM THESE FOUR FIGURES BEFORE LAUNCH — they are the only
+     numbers on the site. Edit data-to and data-suffix.
+     ================================================================ -->
+<section class="stats" id="numbers" aria-label="Company record">
+  <img src="https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?auto=format&fit=crop&w=1600&q=60" alt="" aria-hidden="true" loading="lazy" decoding="async">
+  <div class="wrap stats-in">
+    <div class="sec-head rv" style="margin-bottom:0">
+      <p class="label" style="color:var(--on-navy-2)">Our record</p>
+      <h2 class="d2" style="color:#fff">Fifteen years of finished work.</h2>
+    </div>
+    <div class="stats-grid rv">
+      <div class="stat"><b data-to="15" data-suffix="+">0</b><span>Years experience</span></div>
+      <div class="stat"><b data-to="250" data-suffix="+">0</b><span>Projects completed</span></div>
+      <div class="stat"><b data-to="12" data-suffix="">0</b><span>Areas covered</span></div>
+      <div class="stat"><b data-to="98" data-suffix="%">0</b><span>Client satisfaction</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TESTIMONIALS ============================ -->
+<section class="sec" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="label">Client feedback</p>
+      <h2 class="d2">What clients say</h2>
+    </div>
+    <div class="rv">
+      <div class="tst-view"><div class="tst-track" id="tstTrack"></div></div>
+      <div class="tst-ctrl">
+        <button class="tst-btn prev" id="tstPrev" aria-label="Previous testimonial"><i class="a" aria-hidden="true"></i></button>
+        <button class="tst-btn next" id="tstNext" aria-label="Next testimonial"><i class="a" aria-hidden="true"></i></button>
+        <span class="tst-pos" id="tstPos" aria-live="polite"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AREAS ============================ -->
+<section class="sec sec-alt" id="areas">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="label">Where we work</p>
+      <h2 class="d2">Areas we cover</h2>
+      <p class="lede">We work across [LOCATION] and the towns around it, on projects of every size.</p>
+    </div>
+
+    <div class="areas rv">
+      <a class="area" href="/areas/location-01/"><b>[LOCATION 01]</b><span class="area-sub">Extensions, renovations and new builds.</span></a>
+      <a class="area" href="/areas/location-02/"><b>[LOCATION 02]</b><span class="area-sub">Residential and commercial projects.</span></a>
+      <a class="area" href="/areas/location-03/"><b>[LOCATION 03]</b><span class="area-sub">Period property refurbishment.</span></a>
+      <a class="area" href="/areas/location-04/"><b>[LOCATION 04]</b><span class="area-sub">Loft conversions and extensions.</span></a>
+      <a class="area" href="/areas/location-05/"><b>[LOCATION 05]</b><span class="area-sub">New build and groundworks.</span></a>
+      <a class="area" href="/areas/location-06/"><b>[LOCATION 06]</b><span class="area-sub">Commercial fit-outs.</span></a>
+      <a class="area" href="/areas/location-07/"><b>[LOCATION 07]</b><span class="area-sub">Whole-house renovation.</span></a>
+      <a class="area" href="/areas/location-08/"><b>[LOCATION 08]</b><span class="area-sub">Roofing and external works.</span></a>
+    </div>
+    <p class="area-more">Not listed? <a href="#quote">Send us your postcode</a> — we often work further out for the right project.</p>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="label">Common questions</p>
+      <h2 class="d2">Before you ask</h2>
+    </div>
+
+    <div class="faq rv">
+      <div class="faq-item">
+        <h3><button class="faq-q" aria-expanded="false" aria-controls="fa1" id="fq1"><i class="faq-sign" aria-hidden="true"></i> How much does a construction project cost?</button></h3>
+        <div class="faq-a" id="fa1" role="region" aria-labelledby="fq1"><div><p>Cost depends on size, specification, site access and how much structural work is involved, so any figure quoted before a site visit is guesswork. After an initial consultation we give you an itemised written quotation with the assumptions it is based on, so you can compare it fairly against others.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-q" aria-expanded="false" aria-controls="fa2" id="fq2"><i class="faq-sign" aria-hidden="true"></i> How long does a typical project take?</button></h3>
+        <div class="faq-a" id="fa2" role="region" aria-labelledby="fq2"><div><p>A single-storey extension usually runs to a few months on site, a loft conversion less, and a full renovation or new build considerably longer. Planning and building control approvals sit before that. You get a dated programme with your quote and a weekly update against it once work starts.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-q" aria-expanded="false" aria-controls="fa3" id="fq3"><i class="faq-sign" aria-hidden="true"></i> Do you provide free quotations?</button></h3>
+        <div class="faq-a" id="fa3" role="region" aria-labelledby="fq3"><div><p>Yes. The initial consultation, site assessment and written quotation are free and carry no obligation.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-q" aria-expanded="false" aria-controls="fa4" id="fq4"><i class="faq-sign" aria-hidden="true"></i> Do you handle planning and building regulations?</button></h3>
+        <div class="faq-a" id="fa4" role="region" aria-labelledby="fq4"><div><p>We can manage the process with you, including drawings, building control applications and party wall matters where they apply, and we work alongside your architect if you already have one.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-q" aria-expanded="false" aria-controls="fa5" id="fq5"><i class="faq-sign" aria-hidden="true"></i> What areas do you cover?</button></h3>
+        <div class="faq-a" id="fa5" role="region" aria-labelledby="fq5"><div><p>We work across [LOCATION] and the surrounding towns — the current list is in the areas section above. If your postcode sits just outside it, it is still worth asking.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-q" aria-expanded="false" aria-controls="fa6" id="fq6"><i class="faq-sign" aria-hidden="true"></i> What types of projects do you undertake?</button></h3>
+        <div class="faq-a" id="fa6" role="region" aria-labelledby="fq6"><div><p>Residential and commercial work: extensions, renovations, loft conversions, new builds, refurbishments, groundworks and roofing. If a project falls outside what we do well, we will say so rather than take it on.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <h3><button class="faq-q" aria-expanded="false" aria-controls="fa7" id="fq7"><i class="faq-sign" aria-hidden="true"></i> How do you manage project timelines?</button></h3>
+        <div class="faq-a" id="fa7" role="region" aria-labelledby="fq7"><div><p>Every build gets a written programme and one contract manager who owns it. Trades and materials are booked in advance, and if something slips — weather, approvals, a supplier — you hear about it that week along with the revised date.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ QUOTE ============================ -->
+<section class="sec quote" id="quote">
+  <div class="wrap quote-grid">
+    <div class="rv">
+      <p class="label" style="color:var(--on-navy-2)">Request a quote</p>
+      <h2 class="d2" style="margin-top:22px">Let's build something<br>that lasts.</h2>
+      <p class="body" style="margin-top:22px;color:var(--on-navy-2)">Tell us about your project and we'll get back to you. The more detail you give, the closer the first estimate will be.</p>
+
+      <div class="quote-alt">
+        <a href="tel:[PHONE]">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 3h4l2 5-3 2a12 12 0 005 5l2-3 5 2v4a2 2 0 01-2 2A17 17 0 014 5a2 2 0 012-2z"/></svg>
+          <span><b>Call us</b><span>[PHONE]</span></span>
+        </a>
+        <a href="mailto:[EMAIL]">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg>
+          <span><b>Email us</b><span>[EMAIL]</span></span>
+        </a>
+        <!-- WhatsApp: uncomment and add the number to enable
+        <a href="https://wa.me/[WHATSAPP_NUMBER]" rel="noopener">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21l1.6-4.4A8.5 8.5 0 1112 20.5a8.4 8.4 0 01-4.3-1.2L3 21z"/></svg>
+          <span><b>WhatsApp</b><span>Message us</span></span>
+        </a> -->
+      </div>
+    </div>
+
+    <div class="rv">
+      <!-- Connect later: set action="https://formsubmit.co/[EMAIL]" (or your
+           Web3Forms endpoint) and delete the e.preventDefault() line below. -->
+      <form id="quoteForm" novalidate action="#" method="post" aria-labelledby="quoteFormTitle">
+        <h3 id="quoteFormTitle" class="sr-only">Quote request form</h3>
+        <div class="form-alert" id="formAlert" role="alert" tabindex="-1"></div>
+
+        <div class="field"><label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Jane Whitfield">
+          <span class="err-msg" id="e-name"></span></div>
+
+        <div class="field"><label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="jane@example.co.uk">
+          <span class="err-msg" id="e-email"></span></div>
+
+        <div class="field"><label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" required placeholder="07000 000000">
+          <span class="err-msg" id="e-phone"></span></div>
+
+        <div class="field"><label for="f-type">Project type <span class="req" aria-hidden="true">*</span></label>
+          <select id="f-type" name="project_type" required>
+            <option value="">Please select</option>
+            <option>Extension</option><option>New build</option><option>Renovation</option>
+            <option>Loft conversion</option><option>Refurbishment / fit-out</option>
+            <option>Commercial</option><option>Groundworks</option><option>Roofing</option><option>Other</option>
+          </select>
+          <span class="err-msg" id="e-type"></span></div>
+
+        <div class="field"><label for="f-postcode">Location or postcode <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-postcode" name="postcode" type="text" autocomplete="postal-code" required placeholder="SW1A 1AA">
+          <span class="err-msg" id="e-postcode"></span></div>
+
+        <div class="field"><label for="f-budget">Estimated budget</label>
+          <select id="f-budget" name="budget">
+            <option value="">Not sure yet</option>
+            <option>Under £25,000</option><option>£25,000 – £50,000</option>
+            <option>£50,000 – £100,000</option><option>£100,000 – £250,000</option><option>£250,000+</option>
+          </select></div>
+
+        <div class="field"><label for="f-start">Preferred start date</label>
+          <input id="f-start" name="start_date" type="date"></div>
+
+        <div class="field"><label for="f-source">How did you hear about us?</label>
+          <select id="f-source" name="source">
+            <option value="">Please select</option>
+            <option>Google search</option><option>Recommendation</option><option>Social media</option>
+            <option>Saw our site board</option><option>Returning client</option><option>Other</option>
+          </select></div>
+
+        <div class="field f-full"><label for="f-details">Project details <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="f-details" name="details" required placeholder="What you'd like to build, rough size, whether you have drawings, and anything that affects access."></textarea>
+          <span class="err-msg" id="e-details"></span></div>
+
+        <div class="form-foot">
+          <button class="btn btn-gold" type="submit">Request a quote <i class="tick" aria-hidden="true"></i></button>
+          <p class="form-note">We reply to every enquiry. Fields marked <span style="color:var(--gold)">*</span> are required.</p>
+        </div>
+      </form>
+
+      <div class="form-done" id="formDone" tabindex="-1" role="status">
+        <svg class="seal" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+          <rect x="1" y="1" width="42" height="42" stroke="currentColor"/>
+          <path d="M13 22.5l6 6 13-13" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <h3>Thanks — we've got your details.</h3>
+        <p>We'll be in touch within one working day to arrange a consultation. If it's urgent, call us on [PHONE].</p>
+        <p style="margin-top:22px"><button class="link-u" type="button" id="formReset">Send another enquiry <i class="tick" aria-hidden="true"></i></button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CONTACT ============================ -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="label">Contact</p>
+      <h2 class="d2">Find us</h2>
+    </div>
+
+    <div class="contact-grid">
+      <dl class="cdl rv">
+        <div><dt>Phone</dt><dd><a href="tel:[PHONE]">[PHONE]</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:[EMAIL]">[EMAIL]</a></dd></div>
+        <div><dt>Address</dt><dd>[ADDRESS LINE 1]<small>[TOWN], [COUNTY] [POSTCODE], United Kingdom</small></dd></div>
+        <div><dt>Opening hours</dt><dd>[Mon–Fri, 08:00–17:00]<small>[Saturday by arrangement. Closed Sundays.]</small></dd></div>
+        <div><dt>Company</dt><dd>[COMPANY NAME] Ltd<small>Company no. [NUMBER] · VAT [NUMBER]</small></dd></div>
+      </dl>
+
+      <!-- Replace with a Google Maps embed once the address is confirmed:
+           <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%"
+                   style="border:0" loading="lazy" title="[COMPANY NAME] location"></iframe> -->
+      <div class="map rv" role="img" aria-label="Map of the [COMPANY NAME] office location">
+        <div class="map-grid" aria-hidden="true"></div>
+        <svg class="map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M12 22s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="11" r="2.5"/>
+        </svg>
+        <b>[TOWN], [COUNTY]</b>
+        <span>[ADDRESS LINE 1] — visits by appointment.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FINAL CTA ============================ -->
+<section class="final">
+  <div class="wrap final-in">
+    <div>
+      <h2>Have a project in mind?</h2>
+      <p>Let's talk about what you're planning — a call costs nothing and usually saves money.</p>
+    </div>
+    <div class="final-actions">
+      <a class="btn btn-onGold" href="#quote">Get a quote <i class="tick" aria-hidden="true"></i></a>
+      <a class="btn btn-onGold-ghost" href="tel:[PHONE]">Call [PHONE]</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top" style="margin-right:0">
+          <svg class="logo-mk" viewBox="0 0 40 40" aria-hidden="true">
+            <rect x="1" y="1" width="38" height="38" fill="none" stroke="#C8A24C" stroke-width="1.5"/>
+            <path d="M8 31V15l12-7 12 7v16" fill="none" stroke="#E9EBE7" stroke-width="2"/>
+            <path d="M20 31V21M8 24h24" stroke="#C8A24C" stroke-width="1.5"/>
+          </svg>
+          <span><span class="logo-name">[Company Name]</span><span class="logo-sub">Construction</span></span>
+        </a>
+        <p>Construction and building contractors based in [LOCATION], working on residential and commercial projects across [AREAS COVERED].</p>
+        <div class="foot-soc">
+          <a href="#" aria-label="[COMPANY NAME] on Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+          <a href="#" aria-label="[COMPANY NAME] on Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 00-4 4v3H8v4h2v6h4v-6h3l1-4h-4V8z"/></svg></a>
+          <a href="#" aria-label="[COMPANY NAME] on LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18"/><path d="M8 11v6M8 7.6v.1M12 17v-3.6a1.9 1.9 0 013.8 0V17"/></svg></a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h3>Site</h3>
+        <ul>
+          <li><a href="#top">Home</a></li><li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li><li><a href="#work">Our work</a></li>
+          <li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="/services/extensions/">Extensions</a></li>
+          <li><a href="/services/new-builds/">New builds</a></li>
+          <li><a href="/services/renovations/">Renovations</a></li>
+          <li><a href="/services/loft-conversions/">Loft conversions</a></li>
+          <li><a href="/services/commercial/">Commercial</a></li>
+          <li><a href="/services/">All services</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h3>Areas &amp; contact</h3>
+        <ul>
+          <li><a href="/areas/location-01/">[LOCATION 01]</a></li>
+          <li><a href="/areas/location-02/">[LOCATION 02]</a></li>
+          <li><a href="/areas/">All areas</a></li>
+          <li><a href="tel:[PHONE]">[PHONE]</a></li>
+          <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
+          <li><span>[Mon–Fri, 08:00–17:00]</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bot">
+      <p>© <span id="year">2026</span> [COMPANY NAME] Ltd. All rights reserved.</p>
+      <div class="foot-legal">
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/cookie-policy/">Cookie Policy</a>
+        <a href="/terms/">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ PROJECT MODAL ============================ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-bar">
+    <span class="modal-ref" id="modalRef"></span>
+    <button class="modal-close" id="modalClose"><span>Close</span><i class="x" aria-hidden="true"></i></button>
+  </div>
+  <div class="modal-in">
+    <div class="car" id="car" aria-roledescription="carousel" aria-label="Project images">
+      <div class="car-track" id="carTrack"></div>
+      <button class="car-nav prev" id="carPrev" aria-label="Previous image"><i class="a" aria-hidden="true"></i></button>
+      <button class="car-nav next" id="carNext" aria-label="Next image"><i class="a" aria-hidden="true"></i></button>
+      <p class="car-count" id="carCount" aria-live="polite">1 / 1</p>
+    </div>
+    <div class="car-dots wrap" id="carDots"></div>
+    <div class="modal-body">
+      <div>
+        <h2 id="modalTitle" class="d2"></h2>
+        <p class="body" id="modalDesc" style="color:var(--on-navy-2);margin-top:22px"></p>
+        <a class="btn btn-gold" href="#quote" id="modalCta" style="margin-top:30px">Discuss a similar project <i class="tick" aria-hidden="true"></i></a>
+      </div>
+      <div>
+        <dl class="modal-facts" id="modalFacts"></dl>
+        <div class="modal-scope"><h3>Scope of work</h3><ul id="modalScope"></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================ STRUCTURED DATA ============================ -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":["GeneralContractor","LocalBusiness"],
+      "@id":"https://[DOMAIN].co.uk/#business",
+      "name":"[COMPANY NAME]",
+      "description":"Construction and building contractors based in [LOCATION], delivering new builds, extensions, renovations and commercial fit-outs.",
+      "url":"https://[DOMAIN].co.uk/",
+      "telephone":"[PHONE]",
+      "email":"[EMAIL]",
+      "image":"https://[DOMAIN].co.uk/og-image.jpg",
+      "logo":"https://[DOMAIN].co.uk/logo.svg",
+      "priceRange":"££",
+      "address":{"@type":"PostalAddress","streetAddress":"[ADDRESS LINE 1]","addressLocality":"[TOWN]","addressRegion":"[COUNTY]","postalCode":"[POSTCODE]","addressCountry":"GB"},
+      "geo":{"@type":"GeoCoordinates","latitude":"[LAT]","longitude":"[LNG]"},
+      "areaServed":[
+        {"@type":"City","name":"[LOCATION 01]"},{"@type":"City","name":"[LOCATION 02]"},
+        {"@type":"City","name":"[LOCATION 03]"},{"@type":"City","name":"[LOCATION 04]"}
+      ],
+      "openingHoursSpecification":[
+        {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}
+      ],
+      "sameAs":["[INSTAGRAM URL]","[FACEBOOK URL]","[LINKEDIN URL]"],
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog","name":"Construction services",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Extensions","serviceType":"Home extension construction","url":"https://[DOMAIN].co.uk/services/extensions/","provider":{"@id":"https://[DOMAIN].co.uk/#business"},"areaServed":"[LOCATION]"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"New builds","serviceType":"New build construction","url":"https://[DOMAIN].co.uk/services/new-builds/","provider":{"@id":"https://[DOMAIN].co.uk/#business"},"areaServed":"[LOCATION]"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Renovations","serviceType":"Property renovation","url":"https://[DOMAIN].co.uk/services/renovations/","provider":{"@id":"https://[DOMAIN].co.uk/#business"},"areaServed":"[LOCATION]"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Loft conversions","serviceType":"Loft conversion","url":"https://[DOMAIN].co.uk/services/loft-conversions/","provider":{"@id":"https://[DOMAIN].co.uk/#business"},"areaServed":"[LOCATION]"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Commercial construction","serviceType":"Commercial construction and fit-out","url":"https://[DOMAIN].co.uk/services/commercial/","provider":{"@id":"https://[DOMAIN].co.uk/#business"},"areaServed":"[LOCATION]"}}
+        ]
+      }
+    },
+    {"@type":"WebSite","@id":"https://[DOMAIN].co.uk/#website","url":"https://[DOMAIN].co.uk/","name":"[COMPANY NAME]","publisher":{"@id":"https://[DOMAIN].co.uk/#business"},"inLanguage":"en-GB"},
+    {"@type":"BreadcrumbList","@id":"https://[DOMAIN].co.uk/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://[DOMAIN].co.uk/"}]},
+    {
+      "@type":"FAQPage","@id":"https://[DOMAIN].co.uk/#faq",
+      "mainEntity":[
+        {"@type":"Question","name":"How much does a construction project cost?","acceptedAnswer":{"@type":"Answer","text":"Cost depends on size, specification, site access and how much structural work is involved. After an initial consultation we provide an itemised written quotation with the assumptions it is based on."}},
+        {"@type":"Question","name":"How long does a typical project take?","acceptedAnswer":{"@type":"Answer","text":"A single-storey extension usually runs to a few months on site, a loft conversion less, and a full renovation or new build considerably longer. A dated programme is issued with every quotation."}},
+        {"@type":"Question","name":"Do you provide free quotations?","acceptedAnswer":{"@type":"Answer","text":"Yes. The initial consultation, site assessment and written quotation are free and carry no obligation."}},
+        {"@type":"Question","name":"Do you handle planning and building regulations?","acceptedAnswer":{"@type":"Answer","text":"We can manage drawings, building control applications and party wall matters where they apply, and work alongside your architect if you already have one."}},
+        {"@type":"Question","name":"What areas do you cover?","acceptedAnswer":{"@type":"Answer","text":"We work across [LOCATION] and the surrounding towns. The current list is published on this page."}},
+        {"@type":"Question","name":"What types of projects do you undertake?","acceptedAnswer":{"@type":"Answer","text":"Residential and commercial work including extensions, renovations, loft conversions, new builds, refurbishments, groundworks and roofing."}},
+        {"@type":"Question","name":"How do you manage project timelines?","acceptedAnswer":{"@type":"Answer","text":"Every build has a written programme and one contract manager responsible for it, with a weekly written update against the programme."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+/* ============================================================
+   CONFIG
+   ============================================================ */
+const HERO_TEXT_AT = 2.6;   // seconds into the clip when the headline appears (hammer strike)
+const HERO_FALLBACK_MS = 600; // delay used if there is no video file yet
+
+/* Photography. Replace any URL with your own /assets/ path.
+   Current images are free Unsplash stock for visualisation. */
+const IMG = {
+  townhouse:"photo-1621511075938-f03482369feb",
+  extension:"photo-1536895058696-a69b1c7ba34f",
+  newbuild:"photo-1508450859948-4e04fabaa4ea",
+  commercial:"photo-1565008447742-97f6f38c985c",
+  loft:"photo-1587582423116-ec07293f0395",
+  fitout:"photo-1601074231509-dce351c05199",
+  cottage:"photo-1591955506264-3f5a6834570a",
+  sideext:"photo-1527335988388-b40ee248d80c",
+  block:"photo-1551711974-faf378be34b2",
+  studio:"photo-1429497419816-9ca5cfb4571a",
+  crew:"photo-1541888946425-d81bb19240f5",
+  frame:"photo-1535732759880-bbd5c7265e3f",
+  crane:"photo-1599707254554-027aeb4deacd",
+  site:"photo-1531834685032-c34bf0d84c77"
+};
+const src = (k, w) => `https://images.unsplash.com/${IMG[k]||k}?auto=format&fit=crop&w=${w}&q=68`;
+
+const PROJECTS = [
+  { title:"Victorian Townhouse Renovation", category:"Renovation", secondary:"Residential", location:"[LOCATION 01]", year:"[20XX]",
+    description:"Full internal renovation of a four-storey period townhouse, retaining original detail while rebuilding the services behind it.",
+    scope:["Structural alterations and steelwork","Full rewire and replumb","Joinery and cornice restoration","Bathrooms and kitchen installation","Redecoration throughout"],
+    img:"townhouse", gallery:["townhouse","site","crew","frame"], size:"lg" },
+
+  { title:"Rear Kitchen Extension", category:"Extension", secondary:"Residential", location:"[LOCATION 02]", year:"[20XX]",
+    description:"Single-storey rear extension with a structural opening across the full width of the original rear wall.",
+    scope:["Foundations and drainage diversion","Steel frame and glazing","Underfloor heating","External brickwork to match"],
+    img:"extension", gallery:["extension","sideext","site"], size:"sm" },
+
+  { title:"Detached Family New Build", category:"New Build", secondary:"Residential", location:"[LOCATION 03]", year:"[20XX]",
+    description:"Ground-up detached house delivered from groundworks to handover on a fixed programme.",
+    scope:["Site clearance and groundworks","Frame erection","Roof and envelope","First and second fix","External works and landscaping"],
+    img:"newbuild", gallery:["newbuild","frame","crane","crew"], size:"" },
+
+  { title:"Retail Unit Fit-Out", category:"Commercial", secondary:"Commercial", location:"[LOCATION 04]", year:"[20XX]",
+    description:"Shell-to-trading fit-out completed in phases around the tenant's opening date.",
+    scope:["Shopfront and signage works","Partitions and ceilings","Mechanical and electrical","Flooring and joinery"],
+    img:"commercial", gallery:["commercial","fitout","site"], size:"" },
+
+  { title:"Loft Conversion with Dormer", category:"Extension", secondary:"Residential", location:"[LOCATION 01]", year:"[20XX]",
+    description:"Rear dormer conversion adding a bedroom and en-suite, with a compliant staircase through the existing landing.",
+    scope:["Structural floor and dormer framing","Staircase formation","Insulation to current standards","En-suite installation"],
+    img:"loft", gallery:["loft","frame","site"], size:"sm" },
+
+  { title:"Warehouse Office Conversion", category:"Commercial", secondary:"Commercial", location:"[LOCATION 05]", year:"[20XX]",
+    description:"Conversion of a light industrial unit into open-plan office space with a mezzanine level.",
+    scope:["Mezzanine structure","Thermal upgrade to envelope","Services distribution","Fire strategy compliance works"],
+    img:"fitout", gallery:["fitout","commercial","crew","frame"], size:"lg" },
+
+  { title:"Period Cottage Restoration", category:"Renovation", secondary:"Residential", location:"[LOCATION 06]", year:"[20XX]",
+    description:"Sympathetic restoration of a listed cottage, working to conservation officer requirements throughout.",
+    scope:["Lime plaster and pointing","Timber frame repairs","Reroofing in reclaimed tile","Heritage joinery"],
+    img:"cottage", gallery:["cottage","site","crew"], size:"" },
+
+  { title:"Two-Storey Side Extension", category:"Extension", secondary:"Residential", location:"[LOCATION 02]", year:"[20XX]",
+    description:"Two-storey side addition creating a utility and garden room below with a bedroom above.",
+    scope:["Piled foundations","Masonry construction","Roof tie-in to existing","Internal reconfiguration"],
+    img:"sideext", gallery:["sideext","extension","frame"], size:"" },
+
+  { title:"Apartment Block Refurbishment", category:"Residential", secondary:"Residential", location:"[LOCATION 07]", year:"[20XX]",
+    description:"Common parts and external refurbishment across an occupied block, phased to keep access open.",
+    scope:["External repairs and decoration","Communal area refurbishment","Balcony waterproofing","Lighting upgrade"],
+    img:"block", gallery:["block","crane","site"], size:"sm" },
+
+  { title:"Garden Studio and Groundworks", category:"New Build", secondary:"Residential", location:"[LOCATION 08]", year:"[20XX]",
+    description:"Insulated garden studio on a new slab, with drainage, paving and boundary works.",
+    scope:["Excavation and slab","Frame and cladding","Power and data supply","Paving and landscaping"],
+    img:"studio", gallery:["studio","newbuild","site"], size:"" }
+];
+
+/* Replace with real client quotes (with permission) before launch. */
+const TESTIMONIALS = [
+  { quote:"They gave us a programme at the start and stuck to it. The site was tidy every evening and we always knew what was happening the following week.", name:"[Client Name]", project:"Rear extension", location:"[LOCATION 02]" },
+  { quote:"The detailing is what stands out. Everything lines up, and a year on there isn't a single crack or gap anywhere.", name:"[Client Name]", project:"Whole-house renovation", location:"[LOCATION 01]" },
+  { quote:"Costs were clear from the first quote and nothing appeared at the end that we hadn't already discussed and agreed.", name:"[Client Name]", project:"New build", location:"[LOCATION 03]" },
+  { quote:"They worked around our opening date and kept half the unit trading throughout. We'd use them again without hesitation.", name:"[Client Name]", project:"Commercial fit-out", location:"[LOCATION 04]" }
+];
+
+/* ============================================================
+   HERO VIDEO + TEXT REVEAL
+   ============================================================ */
+const hero = document.getElementById('hero');
+const video = document.getElementById('heroVideo');
+let revealed = false;
+const reveal = () => { if(!revealed){ revealed = true; hero.classList.add('reveal'); } };
+
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+  video.removeAttribute('autoplay'); video.pause(); reveal();
+} else {
+  // headline lands on the hammer strike, and again on every loop
+  video.addEventListener('timeupdate', () => { if(video.currentTime >= HERO_TEXT_AT) reveal(); });
+  video.addEventListener('error', () => setTimeout(reveal, HERO_FALLBACK_MS), true);
+  setTimeout(reveal, 4000); // safety net so the text always appears
+}
+addEventListener('load', () => setTimeout(reveal, HERO_FALLBACK_MS + 400));
+
+/* ============================================================
+   NAV
+   ============================================================ */
+const nav = document.getElementById('nav');
+const onScroll = () => {
+  nav.classList.toggle('is-stuck', scrollY > 40);
+  nav.classList.toggle('on-dark', scrollY < hero.offsetHeight - 110);
+};
+onScroll(); addEventListener('scroll', onScroll, {passive:true});
+
+const burger = document.getElementById('burger'), drawer = document.getElementById('drawer'),
+      scrim = document.getElementById('scrim');
+function setDrawer(open){
+  burger.setAttribute('aria-expanded', String(open));
+  burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  drawer.classList.toggle('open', open);
+  scrim.hidden = false;
+  scrim.classList.toggle('open', open);
+  document.body.classList.toggle('no-scroll', open);
+  if(open) drawer.querySelector('a').focus();
+}
+scrim.addEventListener('click', () => { setDrawer(false); burger.focus(); });
+burger.addEventListener('click', () => setDrawer(burger.getAttribute('aria-expanded') !== 'true'));
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setDrawer(false)));
+addEventListener('keydown', e => { if(e.key === 'Escape' && drawer.classList.contains('open')){ setDrawer(false); burger.focus(); }});
+
+const navLinks = [...document.querySelectorAll('.nav-link')];
+const secObs = new IntersectionObserver(es => es.forEach(e => {
+  if(e.isIntersecting) navLinks.forEach(l => l.setAttribute('aria-current', String(l.getAttribute('href') === '#'+e.target.id)));
+}), {rootMargin:'-45% 0px -50% 0px'});
+['about','services','work','why','contact'].forEach(id => secObs.observe(document.getElementById(id)));
+
+/* ============================================================
+   REVEALS + COUNTERS
+   ============================================================ */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const rvObs = new IntersectionObserver((es,o) => es.forEach(e => {
+  if(e.isIntersecting){ e.target.classList.add('in'); o.unobserve(e.target); }
+}), {rootMargin:'0px 0px -12% 0px'});
+document.querySelectorAll('.rv').forEach(el => rvObs.observe(el));
+
+/* each service and project card fades up on its own, slightly after the one
+   before it, rather than the whole section arriving at once */
+function stagger(cards, step){
+  cards.forEach((el,i) => {
+    el.classList.add('rv');
+    el.style.transitionDelay = (reduce ? 0 : (i % 3) * step) + 'ms';
+    rvObs.observe(el);
+  });
+}
+stagger([...document.querySelectorAll('.svc-item')], 90);
+
+/* video band: only loads and plays once it is on screen */
+const reel = document.getElementById('reelVideo'), reelBtn = document.getElementById('reelBtn');
+const reelObs = new IntersectionObserver(es => es.forEach(e => {
+  if(reelBtn.getAttribute('aria-pressed') === 'manual-off') return;
+  if(e.isIntersecting && !reduce){ reel.play().catch(()=>{}); } else { reel.pause(); }
+}), {threshold:.25});
+reelObs.observe(reel);
+reelBtn.addEventListener('click', () => {
+  if(reel.paused){ reel.play().catch(()=>{}); reelBtn.setAttribute('aria-pressed','true'); document.getElementById('reelLabel').textContent = 'Pause'; }
+  else { reel.pause(); reelBtn.setAttribute('aria-pressed','manual-off'); document.getElementById('reelLabel').textContent = 'Play'; }
+});
+reel.addEventListener('play', () => { document.getElementById('reelLabel').textContent = 'Pause'; });
+
+const cObs = new IntersectionObserver((es,o) => es.forEach(e => {
+  if(!e.isIntersecting) return; o.unobserve(e.target);
+  const el = e.target, to = +el.dataset.to, suf = el.dataset.suffix || '';
+  if(reduce){ el.textContent = to + suf; return; }
+  const t0 = performance.now(), dur = 1500;
+  (function step(t){
+    const p = Math.min(1,(t-t0)/dur), k = 1 - Math.pow(1-p,3);
+    el.textContent = Math.round(to*k) + (p === 1 ? suf : '');
+    if(p < 1) requestAnimationFrame(step);
+  })(t0);
+}), {threshold:.4});
+document.querySelectorAll('.stat b').forEach(el => cObs.observe(el));
+
+/* ============================================================
+   WORK GRID + FILTER
+   ============================================================ */
+const grid = document.getElementById('workGrid'), countEl = document.getElementById('workCount');
+let filter = 'all';
+const matches = p => filter === 'all' || p.category === filter || p.secondary === filter;
+
+function renderWork(){
+  const list = PROJECTS.map((p,i) => ({p,i})).filter(o => matches(o.p));
+  if(!list.length){
+    grid.innerHTML = '<p class="work-empty">Nothing in this category yet — choose “All” to see everything, or ask us about work like this.</p>';
+  } else {
+    grid.innerHTML = list.map(({p,i}, n) => {
+      const no = String(i+1).padStart(2,'0');
+      const cls = [p.size === 'lg' ? 'w-lg' : p.size === 'sm' ? 'w-sm' : '', n % 3 === 2 ? 'push' : ''].join(' ');
+      return `<button class="proj ${cls}" data-i="${i}" aria-haspopup="dialog">
+        <div class="proj-media">
+          <span class="proj-no">${no}</span>
+          <img src="${src(p.img, p.size === 'lg' ? 1200 : 800)}" alt="${p.title} — ${p.category} project in ${p.location}" loading="lazy" decoding="async">
+          <span class="proj-over">
+            <span>${p.description}</span>
+            <span class="proj-open">View project <i class="tick" aria-hidden="true"></i></span>
+          </span>
+        </div>
+        <div class="proj-meta">
+          <h3 class="proj-title">${p.title}</h3>
+          <p class="proj-sub">${p.category} — ${p.location}</p>
+        </div>
+      </button>`;
+    }).join('');
+  }
+  countEl.textContent = `Showing ${list.length} of ${PROJECTS.length} projects`;
+  grid.querySelectorAll('.proj').forEach(b => b.addEventListener('click', () => openModal(+b.dataset.i, b)));
+  stagger([...grid.querySelectorAll('.proj')], 110);
+}
+document.querySelectorAll('.filter').forEach(b => b.addEventListener('click', () => {
+  filter = b.dataset.filter;
+  document.querySelectorAll('.filter').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+  renderWork();
+}));
+renderWork();
+
+/* ============================================================
+   MODAL + CAROUSEL
+   ============================================================ */
+const modal = document.getElementById('modal'), track = document.getElementById('carTrack'),
+      dotsEl = document.getElementById('carDots'), countTxt = document.getElementById('carCount');
+let slide = 0, lastFocus = null;
+
+function goTo(n){
+  const total = track.children.length;
+  slide = (n + total) % total;
+  track.style.transform = `translateX(-${slide*100}%)`;
+  countTxt.textContent = `${slide+1} / ${total}`;
+  [...dotsEl.children].forEach((d,i) => d.setAttribute('aria-current', String(i === slide)));
+}
+
+function openModal(i, origin){
+  const p = PROJECTS[i]; lastFocus = origin || document.activeElement;
+  const no = String(i+1).padStart(2,'0');
+  document.getElementById('modalRef').textContent = 'Project ' + no;
+  document.getElementById('modalTitle').textContent = p.title;
+  document.getElementById('modalDesc').textContent = p.description;
+  document.getElementById('modalFacts').innerHTML =
+    [['Category',p.category],['Location',p.location],['Year',p.year]]
+    .map(([k,v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  document.getElementById('modalScope').innerHTML = p.scope.map(s => `<li>${s}</li>`).join('');
+
+  track.innerHTML = p.gallery.map((g,n) =>
+    `<div class="car-slide" role="group" aria-roledescription="slide" aria-label="${n+1} of ${p.gallery.length}">
+       <img src="${src(g,1600)}" alt="${p.title} — image ${n+1} of ${p.gallery.length}" loading="${n?'lazy':'eager'}" decoding="async">
+     </div>`).join('');
+  dotsEl.innerHTML = p.gallery.map((_,n) => `<button type="button" aria-label="Image ${n+1}"><i></i></button>`).join('');
+  [...dotsEl.children].forEach((d,n) => d.addEventListener('click', () => goTo(n)));
+
+  modal.classList.add('open');
+  document.body.classList.add('no-scroll');
+  requestAnimationFrame(() => modal.classList.add('shown'));
+  goTo(0);
+  document.getElementById('modalClose').focus();
+}
+function closeModal(){
+  modal.classList.remove('open','shown');
+  document.body.classList.remove('no-scroll');
+  if(lastFocus) lastFocus.focus();
+}
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('carPrev').addEventListener('click', () => goTo(slide-1));
+document.getElementById('carNext').addEventListener('click', () => goTo(slide+1));
+document.getElementById('modalCta').addEventListener('click', closeModal);
+
+addEventListener('keydown', e => {
+  if(!modal.classList.contains('open')) return;
+  if(e.key === 'Escape') closeModal();
+  if(e.key === 'ArrowLeft') goTo(slide-1);
+  if(e.key === 'ArrowRight') goTo(slide+1);
+  if(e.key === 'Tab'){
+    const f = modal.querySelectorAll('button, a[href]');
+    if(!f.length) return;
+    const first = f[0], last = f[f.length-1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+});
+let sx = 0, sy = 0, swiping = false;
+const car = document.getElementById('car');
+car.addEventListener('touchstart', e => { sx = e.touches[0].clientX; sy = e.touches[0].clientY; swiping = true; }, {passive:true});
+car.addEventListener('touchend', e => {
+  if(!swiping) return; swiping = false;
+  const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+  if(Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) goTo(slide + (dx < 0 ? 1 : -1));
+}, {passive:true});
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+const tTrack = document.getElementById('tstTrack'), tPos = document.getElementById('tstPos');
+let t = 0;
+tTrack.innerHTML = TESTIMONIALS.map((x,i) => `
+  <figure class="tst-card" role="group" aria-roledescription="slide" aria-label="${i+1} of ${TESTIMONIALS.length}">
+    <blockquote class="tst-q">“${x.quote}”</blockquote>
+    <figcaption class="tst-by"><b>${x.name}</b><span>${x.project} · ${x.location}</span></figcaption>
+  </figure>`).join('');
+function tGo(n){
+  t = (n + TESTIMONIALS.length) % TESTIMONIALS.length;
+  tTrack.style.transform = `translateX(-${t*100}%)`;
+  tPos.textContent = `${String(t+1).padStart(2,'0')} / ${String(TESTIMONIALS.length).padStart(2,'0')}`;
+}
+document.getElementById('tstPrev').addEventListener('click', () => tGo(t-1));
+document.getElementById('tstNext').addEventListener('click', () => tGo(t+1));
+tGo(0);
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+document.querySelectorAll('.faq-q').forEach(btn => btn.addEventListener('click', () => {
+  const item = btn.closest('.faq-item'), open = btn.getAttribute('aria-expanded') === 'true';
+  document.querySelectorAll('.faq-item.open').forEach(o => {
+    if(o !== item){ o.classList.remove('open'); o.querySelector('.faq-q').setAttribute('aria-expanded','false'); }
+  });
+  item.classList.toggle('open', !open);
+  btn.setAttribute('aria-expanded', String(!open));
+}));
+
+/* ============================================================
+   QUOTE FORM (client-side validation)
+   ============================================================ */
+const form = document.getElementById('quoteForm'), done = document.getElementById('formDone'),
+      alertBox = document.getElementById('formAlert');
+const RULES = {
+  'f-name':     v => v.trim().length >= 2 || 'Enter your full name.',
+  'f-email':    v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || 'Enter a valid email address, like jane@example.co.uk.',
+  'f-phone':    v => v.replace(/\D/g,'').length >= 10 || 'Enter a phone number with at least 10 digits.',
+  'f-type':     v => v !== '' || 'Choose the type of project.',
+  'f-postcode': v => v.trim().length >= 3 || 'Enter a town or postcode so we know where the site is.',
+  'f-details':  v => v.trim().length >= 20 || 'Add a little more detail — at least a sentence about the work.'
+};
+function check(id){
+  const el = document.getElementById(id), res = RULES[id](el.value), ok = res === true;
+  el.closest('.field').classList.toggle('err', !ok);
+  el.setAttribute('aria-invalid', String(!ok));
+  const msg = document.getElementById('e-' + id.slice(2));
+  if(msg){ msg.textContent = ok ? '' : res; if(!ok) el.setAttribute('aria-describedby', msg.id); }
+  return ok;
+}
+Object.keys(RULES).forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('blur', () => check(id));
+  el.addEventListener('input', () => { if(el.closest('.field').classList.contains('err')) check(id); });
+});
+form.addEventListener('submit', e => {
+  e.preventDefault(); // remove this line once a form endpoint is connected
+  const bad = Object.keys(RULES).filter(id => !check(id));
+  if(bad.length){
+    alertBox.textContent = `${bad.length} field${bad.length>1?'s need':' needs'} attention before this can be sent.`;
+    alertBox.classList.add('show'); alertBox.focus();
+    document.getElementById(bad[0]).focus();
+    return;
+  }
+  alertBox.classList.remove('show');
+  form.style.display = 'none';
+  done.classList.add('show');
+  done.focus();
+});
+document.getElementById('formReset').addEventListener('click', () => {
+  form.reset(); done.classList.remove('show'); form.style.display = ''; document.getElementById('f-name').focus();
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
