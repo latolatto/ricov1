@@ -245,10 +245,23 @@ ul{margin:0;padding:0;list-style:none}
 .svc-title{font-size:1.16rem;font-weight:700;letter-spacing:-.022em;transition:color .3s}
 .svc-item:hover .svc-title{color:var(--gold)}
 .svc-desc{font-family:var(--f-text);font-weight:300;font-size:.99rem;line-height:1.58;color:var(--ink-2);margin-top:7px;max-width:36ch}
-.svc-more{margin-top:12px;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
-  display:inline-flex;align-items:center;gap:8px;color:var(--ink-2);transition:color .3s}
-.svc-item:hover .svc-more{color:var(--ink)}
-.svc-item:hover .svc-more .tick{transform:rotate(-45deg) translate(2px,2px)}
+
+/* Touch devices (phones/tablets) have no hover, so the reveal-on-hover
+   trick never fires — give each card its own colour instead so the
+   section still feels lively rather than a flat list. */
+@media (hover:none),(max-width:899px){
+  .svc{gap:12px;border-top:0}
+  @media (min-width:700px){.svc{gap:14px}}
+  .svc-item{border-bottom:0;padding:18px 16px;align-items:center}
+  .svc-item::after{display:none}
+  .svc-thumb img{filter:none}
+  .svc-item:nth-child(6n+1){background:rgba(200,162,76,.14)}
+  .svc-item:nth-child(6n+2){background:rgba(11,31,56,.055)}
+  .svc-item:nth-child(6n+3){background:rgba(200,162,76,.09)}
+  .svc-item:nth-child(6n+4){background:rgba(11,31,56,.08)}
+  .svc-item:nth-child(6n+5){background:rgba(200,162,76,.19)}
+  .svc-item:nth-child(6n+6){background:rgba(11,31,56,.04)}
+}
 @media (max-width:480px){
   .svc-item{grid-template-columns:60px 1fr;gap:0 16px}
   .svc-thumb{width:60px;height:60px}
@@ -370,20 +383,45 @@ ul{margin:0;padding:0;list-style:none}
 .band h2{font-size:clamp(1.8rem,4.4vw,3.4rem);letter-spacing:-.04em;max-width:16ch}
 .band p{font-family:var(--f-text);font-weight:300;font-size:clamp(1rem,1.5vw,1.22rem);line-height:1.6;
   color:rgba(255,255,255,.84);max-width:46ch;margin-top:16px}
-.band-play{position:absolute;right:var(--gut);top:clamp(24px,4vw,40px);z-index:3;display:inline-flex;align-items:center;gap:10px;
+.band-play{position:absolute;right:var(--gut);top:clamp(24px,4vw,40px);z-index:3;display:none !important;align-items:center;gap:10px;
   min-height:42px;padding:0 16px;border:1px solid rgba(255,255,255,.4);color:#fff;
   font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .band-play:hover{border-color:var(--gold);color:var(--gold)}
+video{pointer-events:none}
+video::-webkit-media-controls,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-start-playback-button{display:none !important;-webkit-appearance:none}
+video::-webkit-media-controls-enclosure{display:none !important}
 
 /* ============================================================
    11. WHY US
    ============================================================ */
-.why{display:grid;gap:0;border-top:1px solid var(--line)}
-@media (min-width:880px){.why{grid-template-columns:repeat(2,1fr);column-gap:clamp(40px,6vw,90px)}}
-.why-item{padding:clamp(24px,3vw,34px) 0;border-bottom:1px solid var(--line)}
-.why-item h3{font-size:1.18rem;display:flex;align-items:center;gap:14px}
-.why-item h3::before{content:"";flex:none;width:18px;height:1px;background:var(--gold)}
-.why-item p{font-family:var(--f-text);font-weight:300;color:var(--ink-2);line-height:1.66;margin-top:10px;max-width:48ch;padding-left:32px}
+.why{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:640px){.why{grid-template-columns:repeat(3,1fr);gap:16px}}
+.why-item{padding:clamp(22px,2.8vw,30px) clamp(18px,2.2vw,24px);position:relative;overflow:hidden;
+  background:var(--paper-2);transition:transform .35s var(--ease),background .35s var(--ease)}
+.sec:not(.sec-alt) .why-item{background:var(--paper-2)}
+.why-item:nth-child(6n+1){background:rgba(200,162,76,.16)}
+.why-item:nth-child(6n+2){background:rgba(11,31,56,.06)}
+.why-item:nth-child(6n+3){background:rgba(200,162,76,.1)}
+.why-item:nth-child(6n+4){background:rgba(11,31,56,.09)}
+.why-item:nth-child(6n+5){background:rgba(200,162,76,.2)}
+.why-item:nth-child(6n+6){background:rgba(11,31,56,.045)}
+@media (hover:hover){
+  .why-item:hover{transform:translateY(-5px)}
+}
+.why-ic{width:38px;height:38px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  background:var(--navy-900);color:var(--gold)}
+.why-ic svg{width:19px;height:19px}
+.why-item h3{font-size:1.02rem;letter-spacing:-.015em}
+.why-item p{font-family:var(--f-text);font-weight:300;color:var(--ink-2);line-height:1.6;margin-top:8px;font-size:.94rem}
+@media (max-width:520px){
+  .why{grid-template-columns:1fr}
+  .why-item{display:grid;grid-template-columns:38px 1fr;gap:0 16px;align-items:start}
+  .why-ic{margin-bottom:0}
+  .why-item p{grid-column:2}
+}
 
 /* ============================================================
    12. STATS — the only numbers on the page
@@ -400,9 +438,9 @@ ul{margin:0;padding:0;list-style:none}
 /* ============================================================
    13. TESTIMONIALS
    ============================================================ */
-.tst-view{overflow:hidden}
-.tst-track{display:flex;transition:transform .55s var(--ease)}
-.tst-card{flex:0 0 100%;padding-right:2px}
+.tst-view{overflow:hidden;touch-action:pan-y}
+.tst-track{display:flex;transition:transform .55s var(--ease);will-change:transform}
+.tst-card{flex:0 0 100%;max-width:100%;min-width:100%;margin:0;padding-right:0}
 .tst-q{font-family:var(--f-text);font-size:clamp(1.35rem,3.1vw,2.3rem);line-height:1.38;font-weight:300;letter-spacing:-.015em;color:var(--ink);max-width:26ch}
 .tst-by{margin-top:clamp(26px,3vw,36px);padding-top:18px;border-top:1px solid var(--line);display:grid;gap:5px}
 .tst-by b{font-size:14.5px;font-weight:700}
@@ -418,15 +456,32 @@ ul{margin:0;padding:0;list-style:none}
 /* ============================================================
    14. AREAS
    ============================================================ */
-.areas{display:grid;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft)}
-@media (min-width:600px){.areas{grid-template-columns:repeat(2,1fr)}}
+.areas{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+@media (min-width:600px){.areas{grid-template-columns:repeat(3,1fr)}}
 @media (min-width:980px){.areas{grid-template-columns:repeat(4,1fr)}}
-.area{background:var(--paper);padding:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;justify-content:flex-end;gap:7px;min-height:130px;transition:background .3s var(--ease)}
-.sec-alt .area{background:var(--paper-2)}
-.area:hover{background:var(--navy-900);color:#fff}
-.area:hover .area-sub{color:var(--on-navy-2)}
-.area b{font-size:1.06rem;font-weight:700;letter-spacing:-.015em}
-.area-sub{font-size:12.5px;color:var(--ink-2);font-family:var(--f-text);font-weight:300;line-height:1.5}
+.area{background:var(--paper-2);padding:clamp(20px,2.2vw,24px);display:flex;flex-direction:column;gap:10px;
+  min-height:140px;position:relative;transition:transform .3s var(--ease),background .3s var(--ease)}
+.area:nth-child(8n+1){background:rgba(200,162,76,.16)}
+.area:nth-child(8n+2){background:rgba(11,31,56,.06)}
+.area:nth-child(8n+3){background:rgba(200,162,76,.1)}
+.area:nth-child(8n+4){background:rgba(11,31,56,.09)}
+.area:nth-child(8n+5){background:rgba(200,162,76,.2)}
+.area:nth-child(8n+6){background:rgba(11,31,56,.045)}
+.area:nth-child(8n+7){background:rgba(200,162,76,.13)}
+.area:nth-child(8n+8){background:rgba(11,31,56,.075)}
+.area:nth-child(odd){--tilt:-1.4deg}
+.area:nth-child(even){--tilt:1.4deg}
+@media (hover:hover){
+  .area:hover{transform:translateY(-6px) rotate(var(--tilt));background:var(--navy-900)}
+  .area:hover .area-sub{color:var(--on-navy-2)}
+  .area:hover b{color:#fff}
+  .area:hover .area-pin{background:var(--gold);color:var(--navy-900)}
+}
+.area-pin{width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex:none;
+  background:var(--navy-900);color:var(--gold);transition:background .3s var(--ease),color .3s var(--ease)}
+.area-pin svg{width:16px;height:16px}
+.area b{font-size:1.06rem;font-weight:700;letter-spacing:-.015em;margin-top:auto;transition:color .3s}
+.area-sub{font-size:12.5px;color:var(--ink-2);font-family:var(--f-text);font-weight:300;line-height:1.5;transition:color .3s}
 .area-more{margin-top:22px;font-size:13px;color:var(--ink-2);font-family:var(--f-text);font-weight:300}
 .area-more a{border-bottom:1px solid var(--gold)}
 
@@ -607,7 +662,7 @@ footer{background:var(--navy-900);color:var(--on-navy);padding-block:clamp(54px,
      ============================================================ -->
 <section class="hero" id="hero">
   <div class="hero-media">
-    <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg">
+    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline="true" preload="auto" controls="false" controlslist="nodownload nofullscreen noplaybackrate" poster="assets/hero-poster.jpg">
       <source src="assets/hero.mp4" type="video/mp4">
     </video>
   </div>
@@ -667,56 +722,48 @@ footer{background:var(--navy-900);color:var(--on-navy);padding-block:clamp(54px,
         <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1621511075938-f03482369feb?auto=format&fit=crop&w=200&q=60" alt="Brick extension under construction" loading="lazy" decoding="async"></span>
         <h3 class="svc-title">Extensions</h3>
         <p class="svc-desc">Single and double-storey extensions, side returns and wrap-arounds, built to read as part of the original house.</p>
-        <a class="svc-more" href="/services/extensions/">Service details <i class="tick" aria-hidden="true"></i></a>
       </article>
 
       <article class="svc-item" id="svc-new-builds">
         <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1508450859948-4e04fabaa4ea?auto=format&fit=crop&w=200&q=60" alt="New build structure under construction" loading="lazy" decoding="async"></span>
         <h3 class="svc-title">New builds</h3>
         <p class="svc-desc">Ground-up residential builds, managed to a fixed programme from groundworks to handover.</p>
-        <a class="svc-more" href="/services/new-builds/">Service details <i class="tick" aria-hidden="true"></i></a>
       </article>
 
       <article class="svc-item" id="svc-renovations">
         <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?auto=format&fit=crop&w=200&q=60" alt="Builders working on a property renovation" loading="lazy" decoding="async"></span>
         <h3 class="svc-title">Renovations</h3>
         <p class="svc-desc">Whole-house renovation including structural alterations, services and finishes.</p>
-        <a class="svc-more" href="/services/renovations/">Service details <i class="tick" aria-hidden="true"></i></a>
       </article>
 
       <article class="svc-item" id="svc-loft-conversions">
         <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&w=200&q=60" alt="Carpenter working on a roof structure" loading="lazy" decoding="async"></span>
         <h3 class="svc-title">Loft conversions</h3>
         <p class="svc-desc">Dormer, hip-to-gable and rooflight conversions with compliant stairs and insulation.</p>
-        <a class="svc-more" href="/services/loft-conversions/">Service details <i class="tick" aria-hidden="true"></i></a>
       </article>
 
       <article class="svc-item" id="svc-refurbishments">
         <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=200&q=60" alt="Construction team on a refurbishment project" loading="lazy" decoding="async"></span>
         <h3 class="svc-title">Refurbishments &amp; fit-outs</h3>
         <p class="svc-desc">Interior refurbishment for occupied homes and commercial units, phased around how the space is used.</p>
-        <a class="svc-more" href="/services/refurbishments/">Service details <i class="tick" aria-hidden="true"></i></a>
       </article>
 
       <article class="svc-item" id="svc-commercial">
         <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=200&q=60" alt="Commercial buildings under construction" loading="lazy" decoding="async"></span>
         <h3 class="svc-title">Commercial construction</h3>
         <p class="svc-desc">Offices, retail and light industrial units delivered around tenant and trading constraints.</p>
-        <a class="svc-more" href="/services/commercial/">Service details <i class="tick" aria-hidden="true"></i></a>
       </article>
 
       <article class="svc-item" id="svc-groundworks">
         <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1527335988388-b40ee248d80c?auto=format&fit=crop&w=200&q=60" alt="Structural frame and groundworks on site" loading="lazy" decoding="async"></span>
         <h3 class="svc-title">Groundworks</h3>
         <p class="svc-desc">Foundations, drainage, retaining structures and external hard landscaping.</p>
-        <a class="svc-more" href="/services/groundworks/">Service details <i class="tick" aria-hidden="true"></i></a>
       </article>
 
       <article class="svc-item" id="svc-roofing">
         <span class="svc-thumb"><img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?auto=format&fit=crop&w=200&q=60" alt="Crane and roof works on a building" loading="lazy" decoding="async"></span>
         <h3 class="svc-title">Roofing</h3>
         <p class="svc-desc">Pitched and flat roofing, re-roofs, leadwork and rainwater goods.</p>
-        <a class="svc-more" href="/services/roofing/">Service details <i class="tick" aria-hidden="true"></i></a>
       </article>
     </div>
   </div>
@@ -754,10 +801,10 @@ footer{background:var(--navy-900);color:var(--on-navy);padding-block:clamp(54px,
      It only starts playing once it scrolls into view.
      ===================================================================== -->
 <section class="band" id="reel" aria-label="On site with [COMPANY NAME]">
-  <video id="reelVideo" muted loop playsinline preload="none" poster="assets/showreel-poster.jpg">
+  <video id="reelVideo" autoplay muted loop playsinline webkit-playsinline="true" preload="auto" controls="false" controlslist="nodownload nofullscreen noplaybackrate" poster="assets/showreel-poster.jpg">
     <source src="assets/showreel.mp4" type="video/mp4">
   </video>
-  <button class="band-play" id="reelBtn" aria-pressed="false">
+  <button class="band-play" id="reelBtn" aria-pressed="false" aria-hidden="true" tabindex="-1" hidden>
     <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3l16 9-16 9z"/></svg>
     <span id="reelLabel">Play</span>
   </button>
@@ -776,13 +823,13 @@ footer{background:var(--navy-900);color:var(--on-navy);padding-block:clamp(54px,
       <p class="lede">The working practices that decide whether a build finishes on time and still looks right five years later.</p>
     </div>
 
-    <div class="why rv">
-      <div class="why-item"><h3>Quality craftsmanship</h3><p>Trades who do one thing properly. Work is inspected at each stage, not only at the end.</p></div>
-      <div class="why-item"><h3>Reliable project management</h3><p>One contract manager owns your build. Materials and trades are booked before they are needed.</p></div>
-      <div class="why-item"><h3>Transparent communication</h3><p>Costs, variations and delays are put in writing when they happen, not at invoice stage.</p></div>
-      <div class="why-item"><h3>Attention to detail</h3><p>Junctions, tolerances and reveals set out from drawings, then checked before they are closed up.</p></div>
-      <div class="why-item"><h3>Experienced team</h3><p>A core team that has worked together for years, supported by long-standing specialist subcontractors.</p></div>
-      <div class="why-item"><h3>Professional standards</h3><p>Documented site practice, full insurance and building control sign-off on every project.</p></div>
+    <div class="why">
+      <div class="why-item"><span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 6l4 4-9 9-4.5.5.5-4.5z"/><path d="M13 7l4 4"/></svg></span><h3>Quality craftsmanship</h3><p>Trades who do one thing properly, inspected at each stage — not only at the end.</p></div>
+      <div class="why-item"><span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M8 3v4M16 3v4"/><path d="M9 15l2 2 4-4"/></svg></span><h3>Reliable management</h3><p>One contract manager owns your build. Trades are booked before they're needed.</p></div>
+      <div class="why-item"><span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 5h16v10H9l-4 4V5z"/><path d="M8 9h8M8 12h5"/></svg></span><h3>Clear communication</h3><p>Costs, variations and delays are put in writing when they happen — not at invoice stage.</p></div>
+      <div class="why-item"><span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/></svg></span><h3>Attention to detail</h3><p>Junctions and tolerances set out from drawings, then checked before they're closed up.</p></div>
+      <div class="why-item"><span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3-6 7-6s7 2.7 7 6"/><circle cx="17.5" cy="8.5" r="2.3"/><path d="M22 20c0-2.6-1.8-4.8-4.3-5.6"/></svg></span><h3>Experienced team</h3><p>A core team that has worked together for years, with long-standing subcontractors.</p></div>
+      <div class="why-item"><span class="why-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4.5"/></svg></span><h3>Professional standards</h3><p>Documented site practice, full insurance and building control sign-off on every project.</p></div>
     </div>
   </div>
 </section>
@@ -834,15 +881,15 @@ footer{background:var(--navy-900);color:var(--on-navy);padding-block:clamp(54px,
       <p class="lede">We work across [LOCATION] and the towns around it, on projects of every size.</p>
     </div>
 
-    <div class="areas rv">
-      <a class="area" href="/areas/location-01/"><b>[LOCATION 01]</b><span class="area-sub">Extensions, renovations and new builds.</span></a>
-      <a class="area" href="/areas/location-02/"><b>[LOCATION 02]</b><span class="area-sub">Residential and commercial projects.</span></a>
-      <a class="area" href="/areas/location-03/"><b>[LOCATION 03]</b><span class="area-sub">Period property refurbishment.</span></a>
-      <a class="area" href="/areas/location-04/"><b>[LOCATION 04]</b><span class="area-sub">Loft conversions and extensions.</span></a>
-      <a class="area" href="/areas/location-05/"><b>[LOCATION 05]</b><span class="area-sub">New build and groundworks.</span></a>
-      <a class="area" href="/areas/location-06/"><b>[LOCATION 06]</b><span class="area-sub">Commercial fit-outs.</span></a>
-      <a class="area" href="/areas/location-07/"><b>[LOCATION 07]</b><span class="area-sub">Whole-house renovation.</span></a>
-      <a class="area" href="/areas/location-08/"><b>[LOCATION 08]</b><span class="area-sub">Roofing and external works.</span></a>
+    <div class="areas">
+      <div class="area"><span class="area-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="11" r="2.3"/></svg></span><b>[LOCATION 01]</b><span class="area-sub">Extensions, renovations and new builds.</span></div>
+      <div class="area"><span class="area-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="11" r="2.3"/></svg></span><b>[LOCATION 02]</b><span class="area-sub">Residential and commercial projects.</span></div>
+      <div class="area"><span class="area-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="11" r="2.3"/></svg></span><b>[LOCATION 03]</b><span class="area-sub">Period property refurbishment.</span></div>
+      <div class="area"><span class="area-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="11" r="2.3"/></svg></span><b>[LOCATION 04]</b><span class="area-sub">Loft conversions and extensions.</span></div>
+      <div class="area"><span class="area-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="11" r="2.3"/></svg></span><b>[LOCATION 05]</b><span class="area-sub">New build and groundworks.</span></div>
+      <div class="area"><span class="area-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="11" r="2.3"/></svg></span><b>[LOCATION 06]</b><span class="area-sub">Commercial fit-outs.</span></div>
+      <div class="area"><span class="area-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="11" r="2.3"/></svg></span><b>[LOCATION 07]</b><span class="area-sub">Whole-house renovation.</span></div>
+      <div class="area"><span class="area-pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-6.1 7-11a7 7 0 10-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="11" r="2.3"/></svg></span><b>[LOCATION 08]</b><span class="area-sub">Roofing and external works.</span></div>
     </div>
     <p class="area-more">Not listed? <a href="#quote">Send us your postcode</a> — we often work further out for the right project.</p>
   </div>
@@ -1066,21 +1113,21 @@ footer{background:var(--navy-900);color:var(--on-navy);padding-block:clamp(54px,
       <div class="foot-col">
         <h3>Services</h3>
         <ul>
-          <li><a href="/services/extensions/">Extensions</a></li>
-          <li><a href="/services/new-builds/">New builds</a></li>
-          <li><a href="/services/renovations/">Renovations</a></li>
-          <li><a href="/services/loft-conversions/">Loft conversions</a></li>
-          <li><a href="/services/commercial/">Commercial</a></li>
-          <li><a href="/services/">All services</a></li>
+          <li><a href="#services">Extensions</a></li>
+          <li><a href="#services">New builds</a></li>
+          <li><a href="#services">Renovations</a></li>
+          <li><a href="#services">Loft conversions</a></li>
+          <li><a href="#services">Commercial</a></li>
+          <li><a href="#services">All services</a></li>
         </ul>
       </div>
 
       <div class="foot-col">
         <h3>Areas &amp; contact</h3>
         <ul>
-          <li><a href="/areas/location-01/">[LOCATION 01]</a></li>
-          <li><a href="/areas/location-02/">[LOCATION 02]</a></li>
-          <li><a href="/areas/">All areas</a></li>
+          <li><a href="#areas">[LOCATION 01]</a></li>
+          <li><a href="#areas">[LOCATION 02]</a></li>
+          <li><a href="#areas">All areas</a></li>
           <li><a href="tel:[PHONE]">[PHONE]</a></li>
           <li><a href="mailto:[EMAIL]">[EMAIL]</a></li>
           <li><span>[Mon–Fri, 08:00–17:00]</span></li>
@@ -1090,11 +1137,6 @@ footer{background:var(--navy-900);color:var(--on-navy);padding-block:clamp(54px,
 
     <div class="foot-bot">
       <p>© <span id="year">2026</span> [COMPANY NAME] Ltd. All rights reserved.</p>
-      <div class="foot-legal">
-        <a href="/privacy-policy/">Privacy Policy</a>
-        <a href="/cookie-policy/">Cookie Policy</a>
-        <a href="/terms/">Terms &amp; Conditions</a>
-      </div>
     </div>
   </div>
 </footer>
@@ -1275,11 +1317,29 @@ const TESTIMONIALS = [
 const hero = document.getElementById('hero');
 const video = document.getElementById('heroVideo');
 let revealed = false;
+const forceVideoPlay = (el) => {
+  if(!el) return;
+  el.muted = true;
+  el.setAttribute('playsinline', 'true');
+  el.setAttribute('webkit-playsinline', 'true');
+  el.controls = false;
+  el.setAttribute('controlslist', 'nodownload nofullscreen noplaybackrate');
+  const tryPlay = () => {
+    const p = el.play();
+    if(p && typeof p.catch === 'function') {
+      p.catch(() => setTimeout(tryPlay, 250));
+    }
+  };
+  tryPlay();
+  document.addEventListener('visibilitychange', () => { if(!document.hidden) tryPlay(); });
+  window.addEventListener('focus', tryPlay, {passive:true});
+};
 const reveal = () => { if(!revealed){ revealed = true; hero.classList.add('reveal'); } };
 
 if(matchMedia('(prefers-reduced-motion: reduce)').matches){
   video.removeAttribute('autoplay'); video.pause(); reveal();
 } else {
+  forceVideoPlay(video);
   // headline lands on the hammer strike, and again on every loop
   video.addEventListener('timeupdate', () => { if(video.currentTime >= HERO_TEXT_AT) reveal(); });
   video.addEventListener('error', () => setTimeout(reveal, HERO_FALLBACK_MS), true);
@@ -1339,18 +1399,16 @@ function stagger(cards, step){
 }
 stagger([...document.querySelectorAll('.svc-item')], 90);
 
-/* video band: only loads and plays once it is on screen */
+/* video band: force playback without the native mobile play UI */
 const reel = document.getElementById('reelVideo'), reelBtn = document.getElementById('reelBtn');
+forceVideoPlay(reel);
 const reelObs = new IntersectionObserver(es => es.forEach(e => {
   if(reelBtn.getAttribute('aria-pressed') === 'manual-off') return;
-  if(e.isIntersecting && !reduce){ reel.play().catch(()=>{}); } else { reel.pause(); }
+  if(e.isIntersecting && !reduce){ forceVideoPlay(reel); } else { reel.pause(); }
 }), {threshold:.25});
 reelObs.observe(reel);
-reelBtn.addEventListener('click', () => {
-  if(reel.paused){ reel.play().catch(()=>{}); reelBtn.setAttribute('aria-pressed','true'); document.getElementById('reelLabel').textContent = 'Pause'; }
-  else { reel.pause(); reelBtn.setAttribute('aria-pressed','manual-off'); document.getElementById('reelLabel').textContent = 'Play'; }
-});
-reel.addEventListener('play', () => { document.getElementById('reelLabel').textContent = 'Pause'; });
+reelBtn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); });
+reel.addEventListener('play', () => { if(reelBtn){ reelBtn.setAttribute('aria-pressed','true'); document.getElementById('reelLabel').textContent = 'Pause'; } });
 
 const cObs = new IntersectionObserver((es,o) => es.forEach(e => {
   if(!e.isIntersecting) return; o.unobserve(e.target);
@@ -1490,11 +1548,17 @@ tTrack.innerHTML = TESTIMONIALS.map((x,i) => `
   </figure>`).join('');
 function tGo(n){
   t = (n + TESTIMONIALS.length) % TESTIMONIALS.length;
-  tTrack.style.transform = `translateX(-${t*100}%)`;
+  tTrack.style.transform = `translate3d(-${t * 100}%, 0, 0)`;
   tPos.textContent = `${String(t+1).padStart(2,'0')} / ${String(TESTIMONIALS.length).padStart(2,'0')}`;
 }
 document.getElementById('tstPrev').addEventListener('click', () => tGo(t-1));
 document.getElementById('tstNext').addEventListener('click', () => tGo(t+1));
+let tstStartX = 0;
+tTrack.addEventListener('touchstart', e => { tstStartX = e.touches[0].clientX; }, {passive:true});
+tTrack.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - tstStartX;
+  if(Math.abs(dx) > 45) tGo(t + (dx < 0 ? 1 : -1));
+}, {passive:true});
 tGo(0);
 
 /* ============================================================
